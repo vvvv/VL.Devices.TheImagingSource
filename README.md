@@ -1,4 +1,4 @@
-# VL.MediaPipe
+# VL.Devices.ImagingSource
 Support for using industrial cameras by [The Imaging Source](https://www.theimagingsource.com).
 
 For use with vvvv, the visual live-programming environment for .NET: http://visualprogramming.net
