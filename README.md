@@ -4,7 +4,7 @@ Support for using industrial cameras by [The Imaging Source](https://www.theimag
 For use with vvvv, the visual live-programming environment for .NET: http://visualprogramming.net
 
 ## Getting started
-- Install the [devices driver](https://www.theimagingsource.com/en-us/support/download/) for the specific camera you want to use
+- Install the [device driver](https://www.theimagingsource.com/en-us/support/download/) for the specific camera you want to use
 - Install as [described here](https://thegraybook.vvvv.org/reference/hde/managing-nugets.html) via commandline:
 
     `nuget install VL.Decices.ImagingSource -pre`
