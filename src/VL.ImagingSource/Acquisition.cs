@@ -9,7 +9,7 @@ namespace VL.ImagingSource
 {
     internal class Acquisition : IVideoPlayer
     {
-        public static Acquisition? Start(DeviceInfo deviceInfo, ILogger logger)
+        public static Acquisition? Start(DeviceInfo deviceInfo, ILogger logger, Int2 resolution, int fps)
         {
             logger.Log(LogLevel.Information, "Starting image acquisition on {device}", deviceInfo.UniqueName);
 
@@ -26,29 +26,36 @@ namespace VL.ImagingSource
                 return null;
             }
 
-            // Set the resolution to 640x480
-            grabber.DevicePropertyMap.SetValue(ic4.PropId.Width, 640);
-            grabber.DevicePropertyMap.SetValue(ic4.PropId.Height, 480);
+            //grabber.DevicePropertyMap.SetValue(ic4.PropId., ic4.PixelFormat.);
+
+            // Set the resolution and frame rate
+            grabber.DevicePropertyMap.SetValue(ic4.PropId.Width, resolution.X);
+            grabber.DevicePropertyMap.SetValue(ic4.PropId.Height, resolution.Y);
+            grabber.DevicePropertyMap.SetValue(ic4.PropId.AcquisitionFrameRate, fps);
 
             // Create a SnapSink. A SnapSink allows grabbing single images (or image sequences) out of a data stream.
             var sink = new SnapSink(acceptedPixelFormat: PixelFormat.BGRa8);
             // Setup data stream from the video capture device to the sink and start image acquisition.
             grabber.StreamSetup(sink, ic4.StreamSetupOption.AcquisitionStart);
 
-            return new Acquisition(logger, grabber, sink);
+            return new Acquisition(logger, grabber, sink, resolution, fps);
         }
 
         private readonly IDisposable _idsPeakLibSubscription;
         private readonly ILogger _logger;
         private readonly Grabber _grabber;
         private readonly SnapSink _sink;
+        private readonly Int2 _resolution;
+        private readonly int _fps;
 
-        public Acquisition(ILogger logger, Grabber grabber, SnapSink sink)
+        public Acquisition(ILogger logger, Grabber grabber, SnapSink sink, Int2 resolution, int fps)
         {
             _idsPeakLibSubscription = ImagingSourceLibrary.Use();
             _logger = logger;
             _grabber = grabber;
             _sink = sink;
+            _resolution = resolution;
+            _fps = fps;
         }
 
         //public PixelFormat PixelFormat { get; set; } = new PixelFormat(PixelFormatName.BGRa8);
@@ -72,8 +79,8 @@ namespace VL.ImagingSource
         {
             var image = _sink.SnapSingle(TimeSpan.FromSeconds(1));
 
-            var width = 640;
-            var height = 480;
+            var width = _resolution.X;
+            var height = _resolution.Y;
             var stride = image.BufferSize;
 
             var memoryOwner = new UnmanagedMemoryManager<BgraPixel>(image.Ptr, (int)image.BufferSize);
