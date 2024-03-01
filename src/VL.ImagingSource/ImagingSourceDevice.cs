@@ -70,7 +70,7 @@ public class ImagingSourceDeviceDefinition : DynamicEnumDefinitionBase<ImagingSo
         
         foreach(var device in icDevices)
         {
-            var name = device.UniqueName;
+            var name = device.ModelName + device.Serial;
             if(!devices.ContainsKey(name))
             {
                 devices.Add(name, device);
