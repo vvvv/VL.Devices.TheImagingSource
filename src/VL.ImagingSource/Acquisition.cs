@@ -26,19 +26,31 @@ namespace VL.ImagingSource
                 return null;
             }
 
-            //grabber.DevicePropertyMap.SetValue(ic4.PropId., ic4.PixelFormat.);
+            var frameRate = grabber.DevicePropertyMap.Find(ic4.PropId.AcquisitionFrameRate);
+            float maxFPS = (float)frameRate.Maximum;
+            float minFPS = (float)frameRate.Minimum;
+            frameRate.TrySetValue(Math.Max(Math.Min(fps, maxFPS), minFPS));
+
+            var width = grabber.DevicePropertyMap.Find(ic4.PropId.Width);
+            width.TrySetValue(resolution.X);
+
+            var height = grabber.DevicePropertyMap.Find(ic4.PropId.Height);
+            height.TrySetValue(resolution.Y);
 
             // Set the resolution and frame rate
-            grabber.DevicePropertyMap.SetValue(ic4.PropId.Width, resolution.X);
-            grabber.DevicePropertyMap.SetValue(ic4.PropId.Height, resolution.Y);
-            grabber.DevicePropertyMap.SetValue(ic4.PropId.AcquisitionFrameRate, fps);
-
-            //grabber.DevicePropertyMap.Find()
+            //grabber.DevicePropertyMap.SetValue(ic4.PropId.Width, resolution.X);
+            //grabber.DevicePropertyMap.SetValue(ic4.PropId.Height, resolution.Y);
+            //grabber.DevicePropertyMap.SetValue(ic4.PropId.AcquisitionFrameRate, Math.Max(Math.Min(fps, maxFPS), minFPS));
 
             // Create a SnapSink. A SnapSink allows grabbing single images (or image sequences) out of a data stream.
             var sink = new SnapSink(acceptedPixelFormat: PixelFormat.BGRa8);
             // Setup data stream from the video capture device to the sink and start image acquisition.
             grabber.StreamSetup(sink, ic4.StreamSetupOption.AcquisitionStart);
+
+            //return debug info
+            videoIn._info = $"Framerate range: [{minFPS}, {maxFPS}], current FPS: {grabber.DevicePropertyMap.GetValueString(ic4.PropId.AcquisitionFrameRate)}" +
+                $"\r\n Width range: [{width.Minimum}, {width.Maximum}], current Width {grabber.DevicePropertyMap.GetValueString(ic4.PropId.Width)}" +
+                $"\r\n Height range: [{width.Minimum}, {width.Maximum}], current Height {grabber.DevicePropertyMap.GetValueString(ic4.PropId.Height)}";
 
             return new Acquisition(logger, grabber, sink, resolution, fps);
         }

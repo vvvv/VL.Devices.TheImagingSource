@@ -9,8 +9,10 @@ using Microsoft.Extensions.Logging;
 using ic4;
 using VL.Lib.Basics.Video;
 using VL.Model;
+//using VL.Core.Mathemathecth;
 using System.Security.AccessControl;
 using System.ComponentModel;
+using Stride.Core.Serialization.Serializers;
 
 namespace VL.ImagingSource
 {
@@ -25,6 +27,8 @@ namespace VL.ImagingSource
         private Int2 _resolution;
         private int _fps;
 
+        public string _info;
+
         public VideoIn([Pin(Visibility = PinVisibility.Hidden)] NodeContext nodeContext)
         {
             _logger = nodeContext.GetLogger();
@@ -36,10 +40,16 @@ namespace VL.ImagingSource
             ImagingSourceDevice? device, 
             [DefaultValue("640, 480")] Int2 resolution,
             [DefaultValue("30")] int fps,
-            float exposure,
-            out string xxxxxxx)
+            //float exposure,
+            out string Info)
         {
             bool readDeviceInfo = false;
+            /*if (device?.Tag != _device)
+            {
+                readDeviceInfo = true;
+            }*/
+
+
             // By comparing the device info we can be sure that on re-connect of the device we see the change
             if (device?.Tag != _device || resolution != _resolution || fps != _fps)
             {
@@ -48,16 +58,25 @@ namespace VL.ImagingSource
                 _fps = fps;
                 _changedTicket++;
             }
+            
 
             if (readDeviceInfo)
             {
                 ReadDeviceInfo();
+                readDeviceInfo = false;
             }
 
-            Exposure = exposure;
+            //Exposure = exposure;
 
-            xxxxxxx = "lala";
-            
+            if(_info != null)
+            {
+                Info = _info;//"lala";
+            }
+            else
+            {
+                Info = "";
+            }
+
             return this;
         }
 
@@ -68,10 +87,14 @@ namespace VL.ImagingSource
             {
                 try
                 {
+                    
                     grabber.DeviceOpen(_device);
                     try
                     {
                         // Read device properties
+                        
+                        //grabber.DevicePropertyMap.TryFind("AcquisitionFrameRate", out prop);
+                        //sprop = prop.ToString();
                     }
                     catch (Exception e)
                     {
