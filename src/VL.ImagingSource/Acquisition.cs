@@ -9,7 +9,7 @@ namespace VL.ImagingSource
 {
     internal class Acquisition : IVideoPlayer
     {
-        public static Acquisition? Start(DeviceInfo deviceInfo, ILogger logger, Int2 resolution, int fps)
+        public static Acquisition? Start(VideoIn videoIn, DeviceInfo deviceInfo, ILogger logger, Int2 resolution, int fps)
         {
             logger.Log(LogLevel.Information, "Starting image acquisition on {device}", deviceInfo.UniqueName);
 
@@ -32,6 +32,8 @@ namespace VL.ImagingSource
             grabber.DevicePropertyMap.SetValue(ic4.PropId.Width, resolution.X);
             grabber.DevicePropertyMap.SetValue(ic4.PropId.Height, resolution.Y);
             grabber.DevicePropertyMap.SetValue(ic4.PropId.AcquisitionFrameRate, fps);
+
+            //grabber.DevicePropertyMap.Find()
 
             // Create a SnapSink. A SnapSink allows grabbing single images (or image sequences) out of a data stream.
             var sink = new SnapSink(acceptedPixelFormat: PixelFormat.BGRa8);
@@ -67,6 +69,7 @@ namespace VL.ImagingSource
             try
             {
                 _grabber.StreamStop();
+                _grabber.DeviceClose();
                 _grabber.Dispose();
             }
             catch (Exception e)
@@ -77,6 +80,8 @@ namespace VL.ImagingSource
 
         public unsafe IResourceProvider<VideoFrame>? GrabVideoFrame()
         {
+
+
             var image = _sink.SnapSingle(TimeSpan.FromSeconds(1));
 
             var width = _resolution.X;

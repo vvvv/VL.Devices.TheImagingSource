@@ -21,7 +21,7 @@ namespace VL.ImagingSource
                 {
                     try
                     {
-                        Library.Init();
+                        Library_DllLoadFix.Init();
                     }
                     catch (Exception e)
                     {

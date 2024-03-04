@@ -2,8 +2,8 @@
   "profiles": {
     "vvvv gamma 5.3": {
       "commandName": "Executable",
-      "executablePath": "C:\\Program Files\\vvvv\\vvvv_gamma_6.0-0179-g427422701e\\vvvv.exe",
-      "commandLineArgs": "--package-repositories \"C:\\Users\\alex\\Documents\\libs\" --editable-packages VL.Devices.ImagingSource -o \"$(RepoRootPath)\\VL.Devices.ImagingSource.vl\""
+      "executablePath": "C:\\Program Files\\vvvv\\vvvv_gamma_6.0-0221-g9d6ea9f287\\vvvv.exe",
+      "commandLineArgs": "--package-repositories \"C:\\Users\\alex\\Documents\\libs\" --editable-packages VL.Devices.ImagingSource -o \"$(RepoRootPath)\\help\\HowTo ImagingSource.vl\""
     }
   }
 }

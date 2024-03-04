@@ -10,6 +10,7 @@ using ic4;
 using VL.Lib.Basics.Video;
 using VL.Model;
 using System.Security.AccessControl;
+using System.ComponentModel;
 
 namespace VL.ImagingSource
 {
@@ -31,8 +32,14 @@ namespace VL.ImagingSource
         }
 
         [return: Pin(Name = "Output")]
-        public IVideoSource Update(ImagingSourceDevice? device, Int2 resolution, int fps)
+        public IVideoSource Update(
+            ImagingSourceDevice? device, 
+            [DefaultValue("640, 480")] Int2 resolution,
+            [DefaultValue("30")] int fps,
+            float exposure,
+            out string xxxxxxx)
         {
+            bool readDeviceInfo = false;
             // By comparing the device info we can be sure that on re-connect of the device we see the change
             if (device?.Tag != _device || resolution != _resolution || fps != _fps)
             {
@@ -41,8 +48,45 @@ namespace VL.ImagingSource
                 _fps = fps;
                 _changedTicket++;
             }
+
+            if (readDeviceInfo)
+            {
+                ReadDeviceInfo();
+            }
+
+            Exposure = exposure;
+
+            xxxxxxx = "lala";
             
             return this;
+        }
+
+        private void ReadDeviceInfo()
+        {
+            // Conflict if that specific device is currently in use by image acquisition below
+            using (var grabber = new Grabber())
+            {
+                try
+                {
+                    grabber.DeviceOpen(_device);
+                    try
+                    {
+                        // Read device properties
+                    }
+                    catch (Exception e)
+                    {
+                        // Reading properties crashed
+                    }
+                    finally
+                    {
+                        grabber.DeviceClose();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // DeviceOpen crashed, probably because already in use, see comment above
+                }
+            }
         }
 
         IVideoPlayer? IVideoSource2.Start(VideoPlaybackContext ctx)
@@ -53,7 +97,7 @@ namespace VL.ImagingSource
 
             try
             {
-                return Acquisition.Start(device, _logger, _resolution, _fps);
+                return Acquisition.Start(this, device, _logger, _resolution, _fps);
             }
             catch (Exception e)
             {
@@ -63,6 +107,8 @@ namespace VL.ImagingSource
         }
 
         int IVideoSource2.ChangedTicket => _changedTicket;
+
+        internal float Exposure { get; private set; }
 
         public void Dispose()
         {
