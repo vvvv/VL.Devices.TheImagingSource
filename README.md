@@ -1,13 +1,14 @@
-# VL.Devices.ImagingSource
+# VL.Devices.TheImagingSource
 Support for using industrial cameras by [The Imaging Source](https://www.theimagingsource.com).
 
 For use with vvvv, the visual live-programming environment for .NET: http://visualprogramming.net
 
 ## Getting started
-- Install the [device driver](https://www.theimagingsource.com/en-us/support/download/) for the specific camera you want to use
+- Install the [GenTL Producers / IC4 Driver](https://www.theimagingsource.com/en-us/support/download/) for the specific camera you want to use
+- Install the [Device Driver](https://www.theimagingsource.com/en-us/support/download/) for the specific camera you want to use
 - Install as [described here](https://thegraybook.vvvv.org/reference/hde/managing-nugets.html) via commandline:
 
-    `nuget install VL.Decices.ImagingSource -pre`
+    `nuget install VL.Decices.TheImagingSource -pre`
 
 - Usage examples and more information are included in the pack and can be found via the [Help Browser](https://thegraybook.vvvv.org/reference/hde/findinghelp.html)
 
@@ -17,4 +18,4 @@ For use with vvvv, the visual live-programming environment for .NET: http://visu
 - When making a pull-request, please make sure to read the general [guidlines on contributing to vvvv libraries](https://thegraybook.vvvv.org/reference/extending/contributing.html)
 
 ## Credits
-Based on the [IC Imaging Control 4 SDK](https://www.theimagingsource.com/en-us/support/download/icimagingcontrol4win-1.0.0.2416/)https://www.theimagingsource.com/en-us/support/download/icimagingcontrol4win-1.0.0.2416/.
+Based on the [IC Imaging Control 4 SDK](https://www.nuget.org/packages/ic4dotnet).
