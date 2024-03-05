@@ -12,7 +12,7 @@
     <tags>VL, ic4, camera, capture, video</tags>
     <license type="expression">LGPL-3.0-only</license>
     <dependencies>
-      <group targetFramework=".net6.0" />
+      <group targetFramework="net6.0" />
         <dependency id="ic4dotnet" version="1.0.0.2413" />
       </group>
     </dependencies>
