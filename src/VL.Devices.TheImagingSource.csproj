@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <!--<GenerateDocumentationFile>True</GenerateDocumentationFile>-->
-    <OutputPath>..\..\lib</OutputPath>
+    <OutputPath>..\lib</OutputPath>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 
     <VVVVInstallPath>C:\Program Files\vvvv\vvvv_gamma_6.0-0179-g427422701e</VVVVInstallPath>
