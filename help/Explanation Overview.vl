@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" xmlns:r="reflection" Id="HykmImP6K0vQPA3V48ZwuZ" LanguageVersion="2024.6.0-0221-g9d6ea9f287" Version="0.128">
-  <NugetDependency Id="F8C6dLghEvEMILqoebeMeG" Location="VL.CoreLib" Version="2024.6.0-0221-g9d6ea9f287" />
+<Document xmlns:p="property" xmlns:r="reflection" Id="HykmImP6K0vQPA3V48ZwuZ" LanguageVersion="2024.6.0-0241-gd12e332872" Version="0.128">
+  <NugetDependency Id="F8C6dLghEvEMILqoebeMeG" Location="VL.CoreLib" Version="2024.6.0-0241-gd12e332872" />
   <Patch Id="OAmbDDFSVBUMsWDZMmQUGq">
     <Canvas Id="D1b3IYQAM4DN5YQ7xOZ8Ek" DefaultCategory="Main" BordersChecked="false" CanvasType="FullCategory" />
     <!--
@@ -16,7 +16,7 @@
       <Patch Id="V7D3Ls13QLHMPya4eFQNWr">
         <Canvas Id="RlhbObA9otIMeAeN0Ke7WL" CanvasType="Group">
           <Node Bounds="189,307,189,19" Id="VF0RDh9G8ChP12mqOrVLYn">
-            <p:NodeReference LastCategoryFullName="VL.ImagingSource" LastDependency="VL.Devices.ImagingSource.vl">
+            <p:NodeReference LastCategoryFullName="VL.ImagingSource" LastDependency="VL.Devices.TheImagingSource.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="VideoIn" />
             </p:NodeReference>
@@ -38,7 +38,7 @@
             </p:TypeAnnotation>
           </Pad>
           <Pad Id="CKyXVPHiAEKNYb21h67xXd" Comment="Device" Bounds="177,178,140,15" ShowValueBox="true" isIOBox="true" Value="Default">
-            <p:TypeAnnotation LastCategoryFullName="VL.ImagingSource" LastDependency="VL.Devices.ImagingSource.vl">
+            <p:TypeAnnotation LastCategoryFullName="VL.ImagingSource" LastDependency="VL.Devices.TheImagingSource.vl">
               <Choice Kind="TypeFlag" Name="ImagingSourceDevice" />
             </p:TypeAnnotation>
           </Pad>
@@ -72,6 +72,6 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="FWsnUqWCthEL6Dm9x7Dtom" Location="VL.Devices.ImagingSource" Version="0.0.0" />
-  <NugetDependency Id="LLlxci18XJLQDw3LBCbD5q" Location="VL.Stride" Version="2024.6.0-0221-g9d6ea9f287" />
+  <NugetDependency Id="LLlxci18XJLQDw3LBCbD5q" Location="VL.Stride" Version="2024.6.0-0241-gd12e332872" />
+  <NugetDependency Id="PxG09Qv2xYzORmLjBXPw46" Location="VL.Devices.TheImagingSource" Version="0.0.0" />
 </Document>
