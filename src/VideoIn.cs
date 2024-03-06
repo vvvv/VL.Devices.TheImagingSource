@@ -18,7 +18,8 @@ namespace VL.Devices.TheImagingSource
         private Int2 _resolution;
         private int _fps;
 
-        public string _info;
+        internal string Info { get; set; } = "";
+        //internal float Exposure { get; private set; }
 
         public VideoIn([Pin(Visibility = PinVisibility.Hidden)] NodeContext nodeContext)
         {
@@ -34,34 +35,33 @@ namespace VL.Devices.TheImagingSource
             //float exposure,
             out string Info)
         {
+            /*
             bool readDeviceInfo = false;
-            /*if (device?.Tag != _device)
+            if (device?.Tag != _device)
             {
                 readDeviceInfo = true;
-            }*/
-
+            }
+            
+            if (readDeviceInfo)
+            {
+                ReadDeviceInfo(device?.Tag);
+                readDeviceInfo = false;
+            }
+            */
 
             // By comparing the device info we can be sure that on re-connect of the device we see the change
+            // resolution and fps could be seted at runtime with grabber.propertymap
             if (device?.Tag != _device || resolution != _resolution || fps != _fps)
             {
                 _device = device?.Tag as DeviceInfo;
                 _resolution = resolution;
                 _fps = fps;
                 _changedTicket++;
-            }
-            
+            }            
 
-            if (readDeviceInfo)
+            if(this.Info != null)
             {
-                ReadDeviceInfo();
-                readDeviceInfo = false;
-            }
-
-            //Exposure = exposure;
-
-            if(_info != null)
-            {
-                Info = _info;//"lala";
+                Info = this.Info;
             }
             else
             {
@@ -71,37 +71,44 @@ namespace VL.Devices.TheImagingSource
             return this;
         }
 
-        private void ReadDeviceInfo()
+        /*
+        private void ReadDeviceInfo(DeviceInfo device)
         {
             // Conflict if that specific device is currently in use by image acquisition below
             using (var grabber = new Grabber())
             {
                 try
-                {
-                    
-                    grabber.DeviceOpen(_device);
+                {                    
+                    grabber.DeviceOpen(device);
                     try
                     {
                         // Read device properties
-                        
-                        //grabber.DevicePropertyMap.TryFind("AcquisitionFrameRate", out prop);
-                        //sprop = prop.ToString();
+                        var frameRate = grabber.DevicePropertyMap.Find(ic4.PropId.AcquisitionFrameRate);
+                        var width = grabber.DevicePropertyMap.Find(ic4.PropId.Width);
+                        var height = grabber.DevicePropertyMap.Find(ic4.PropId.Height);
+                        Info = $"Framerate range: [{frameRate.Minimum}, {frameRate.Maximum}];" +
+                               $"\r\nWidth range: [{width.Minimum}, {width.Maximum}];" +
+                               $"\r\nHeight range: [{width.Minimum}, {width.Maximum}];";
                     }
                     catch (Exception e)
                     {
                         // Reading properties crashed
+                        _logger.LogError(e, "Failed to read device properties");
+
                     }
                     finally
                     {
                         grabber.DeviceClose();
                     }
                 }
-                catch (Exception ex)
+                catch (Exception e)
                 {
-                    // DeviceOpen crashed, probably because already in use, see comment above
+                    //DeviceOpen crashed, probably because already in use, see comment above
+                    _logger.LogError(e, "DeviceOpen crashed, probably because already in use, see comment above");
                 }
             }
         }
+        */
 
         IVideoPlayer? IVideoSource2.Start(VideoPlaybackContext ctx)
         {
@@ -121,8 +128,6 @@ namespace VL.Devices.TheImagingSource
         }
 
         int IVideoSource2.ChangedTicket => _changedTicket;
-
-        internal float Exposure { get; private set; }
 
         public void Dispose()
         {

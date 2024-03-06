@@ -32,11 +32,11 @@ namespace VL.Devices.TheImagingSource
             frameRate.TrySetValue(Math.Max(Math.Min(fps, maxFPS), minFPS));
 
             var width = grabber.DevicePropertyMap.Find(ic4.PropId.Width);
-            width.TrySetValue(resolution.X);
+            width.TrySetValue(Math.Max(Math.Min(resolution.X, width.Maximum), width.Minimum)); //TrySetValue(resolution.X);
 
             var height = grabber.DevicePropertyMap.Find(ic4.PropId.Height);
-            height.TrySetValue(resolution.Y);
-
+            height.TrySetValue(Math.Max(Math.Min(resolution.Y, height.Maximum), height.Minimum)); //TrySetValue(resolution.Y);
+            
             // Set the resolution and frame rate
             //grabber.DevicePropertyMap.SetValue(ic4.PropId.Width, resolution.X);
             //grabber.DevicePropertyMap.SetValue(ic4.PropId.Height, resolution.Y);
@@ -48,11 +48,11 @@ namespace VL.Devices.TheImagingSource
             grabber.StreamSetup(sink, ic4.StreamSetupOption.AcquisitionStart);
 
             //return debug info
-            videoIn._info = $"Framerate range: [{minFPS}, {maxFPS}], current FPS: {grabber.DevicePropertyMap.GetValueString(ic4.PropId.AcquisitionFrameRate)}" +
-                $"\r\n Width range: [{width.Minimum}, {width.Maximum}], current Width {grabber.DevicePropertyMap.GetValueString(ic4.PropId.Width)}" +
-                $"\r\n Height range: [{width.Minimum}, {width.Maximum}], current Height {grabber.DevicePropertyMap.GetValueString(ic4.PropId.Height)}";
+            videoIn.Info = $"Framerate range: [{minFPS}, {maxFPS}], current FPS: {grabber.DevicePropertyMap.GetValueString(ic4.PropId.AcquisitionFrameRate)}" +
+                           $"\r\nWidth range: [{width.Minimum}, {width.Maximum}], current Width {grabber.DevicePropertyMap.GetValueString(ic4.PropId.Width)}" +
+                           $"\r\nHeight range: [{height.Minimum}, {height.Maximum}], current Height {grabber.DevicePropertyMap.GetValueString(ic4.PropId.Height)}";
 
-            return new Acquisition(logger, grabber, sink, resolution, fps);
+            return new Acquisition(logger, grabber, sink, new Int2((int)width.Value, (int)height.Value));//, frameRate.Value);
         }
 
         private readonly IDisposable _idsPeakLibSubscription;
@@ -60,16 +60,16 @@ namespace VL.Devices.TheImagingSource
         private readonly Grabber _grabber;
         private readonly SnapSink _sink;
         private readonly Int2 _resolution;
-        private readonly int _fps;
+        //private readonly int _fps;
 
-        public Acquisition(ILogger logger, Grabber grabber, SnapSink sink, Int2 resolution, int fps)
+        public Acquisition(ILogger logger, Grabber grabber, SnapSink sink, Int2 resolution)//, int fps)
         {
             _idsPeakLibSubscription = ImagingSourceLibrary.Use();
             _logger = logger;
             _grabber = grabber;
             _sink = sink;
             _resolution = resolution;
-            _fps = fps;
+            //_fps = fps;
         }
 
         //public PixelFormat PixelFormat { get; set; } = new PixelFormat(PixelFormatName.BGRa8);
@@ -92,8 +92,6 @@ namespace VL.Devices.TheImagingSource
 
         public unsafe IResourceProvider<VideoFrame>? GrabVideoFrame()
         {
-
-
             var image = _sink.SnapSingle(TimeSpan.FromSeconds(1));
 
             var width = _resolution.X;
