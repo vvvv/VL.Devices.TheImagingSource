@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <!--<GenerateDocumentationFile>True</GenerateDocumentationFile>-->
@@ -9,13 +9,13 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 
     <VVVVInstallPath>C:\Program Files\vvvv\vvvv_gamma_6.0-0179-g427422701e</VVVVInstallPath>
-    <RepoRootPath>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\..'))</RepoRootPath>
-    <VVVVRepoPath>$([System.IO.Path]::GetFullPath('$(RepoRootPath)\..'))</VVVVRepoPath>
+    <RepoRootPath>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..'))</RepoRootPath>
+    <VVVVRepoPath>$([System.IO.Path]::GetFullPath('$(RepoRootPath)'))</VVVVRepoPath>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="ic4dotnet" Version="1.0.0.2413" ExcludeAssets="build" />
-    <PackageReference Include="VL.Core" Version="2023.5.3-0338-g7d8db7daf1" />
+    <PackageReference Include="VL.Core" Version="2024.6.0-0241-gd12e332872" />
   </ItemGroup>
 
   <ItemGroup>

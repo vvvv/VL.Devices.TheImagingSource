@@ -1,77 +1,82 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" xmlns:r="reflection" Id="HykmImP6K0vQPA3V48ZwuZ" LanguageVersion="2024.6.0-0241-gd12e332872" Version="0.128">
-  <NugetDependency Id="F8C6dLghEvEMILqoebeMeG" Location="VL.CoreLib" Version="2024.6.0-0241-gd12e332872" />
-  <Patch Id="OAmbDDFSVBUMsWDZMmQUGq">
-    <Canvas Id="D1b3IYQAM4DN5YQ7xOZ8Ek" DefaultCategory="Main" BordersChecked="false" CanvasType="FullCategory" />
+<Document xmlns:p="property" xmlns:r="reflection" Id="O7uicvpTue7QOkn9pvT6h0" LanguageVersion="2024.6.0-0241-gd12e332872" Version="0.128">
+  <NugetDependency Id="MtSbXB0fXjONs00wQwc2B1" Location="VL.CoreLib" Version="2024.6.0-0241-gd12e332872" />
+  <Patch Id="AYmy0M1i0HKOGdLzwQw0md">
+    <Canvas Id="MgtF2r3NxUCLslHtjPAC3I" DefaultCategory="Main" BordersChecked="false" CanvasType="FullCategory" />
     <!--
 
     ************************ Application ************************
 
 -->
-    <Node Name="Application" Bounds="100,100" Id="SlWD87zeC5MLvs50rmQiJd">
+    <Node Name="Application" Bounds="100,100" Id="POk3qJItShJOmIeFSAfBeX">
       <p:NodeReference>
         <Choice Kind="ContainerDefinition" Name="Process" />
         <CategoryReference Kind="Category" Name="Primitive" />
       </p:NodeReference>
-      <Patch Id="V7D3Ls13QLHMPya4eFQNWr">
-        <Canvas Id="RlhbObA9otIMeAeN0Ke7WL" CanvasType="Group">
-          <Node Bounds="189,307,189,19" Id="VF0RDh9G8ChP12mqOrVLYn">
+      <Patch Id="K31V9x29JQzNZ9xUH6mlEO">
+        <Canvas Id="S5UFQhfBv22NEEs5IUmEIb" CanvasType="Group">
+          <Node Bounds="336,279,189,19" Id="SUkDgoCabtrPbycwDNQtvw">
             <p:NodeReference LastCategoryFullName="VL.ImagingSource" LastDependency="VL.Devices.TheImagingSource.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="VideoIn" />
             </p:NodeReference>
-            <Pin Id="UiiQ30JYrrfMfnu9orgbFo" Name="Node Context" Kind="InputPin" IsHidden="true" />
-            <Pin Id="U2jbFiK3KLGLRvoPG7sIGA" Name="Device" Kind="InputPin" />
-            <Pin Id="DxMfN67j4meONuCfqqsuGM" Name="Resolution" Kind="InputPin" />
-            <Pin Id="AtPaDpT12BLNj9wzykqQTK" Name="Fps" Kind="InputPin" />
-            <Pin Id="UAaWMLYpatgN1Rq6RIp0Ov" Name="Output" Kind="OutputPin" />
-            <Pin Id="Iw86iqrKHvlPEmEXNV6tJZ" Name="Info" Kind="OutputPin" />
+            <Pin Id="GhNmDJAdAbLNUYLDDU82ey" Name="Node Context" Kind="InputPin" IsHidden="true" />
+            <Pin Id="CJoLrs091J1PUN101DlxWz" Name="Device" Kind="InputPin" />
+            <Pin Id="M0lApEPpMXcM21Xeume95p" Name="Resolution" Kind="InputPin" />
+            <Pin Id="NxFX0Y6GLl2LXtJ08VlCfQ" Name="Fps" Kind="InputPin" />
+            <Pin Id="QV19TE0fCuSLz7FPl1t120" Name="Output" Kind="OutputPin" />
+            <Pin Id="LvPOD9emrb9QcU3d7Ip627" Name="Info" Kind="OutputPin" />
           </Node>
-          <Pad Id="EVt6BPhKO9iPQadZX1lqW6" Bounds="278,242,35,28" ShowValueBox="true" isIOBox="true" Value="640, 480">
+          <Pad Id="NkSppnyK2TtLRiKatphrWO" Bounds="425,214,35,28" ShowValueBox="true" isIOBox="true" Value="640, 480">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Int2" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="RLuaB994Ty2OWnrnYGG9aE" Comment="Fps" Bounds="386,272,35,15" ShowValueBox="true" isIOBox="true" Value="30">
+          <Pad Id="FmuuC52SChVPgJOd0GRRdu" Comment="Fps" Bounds="533,244,35,15" ShowValueBox="true" isIOBox="true" Value="30">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Integer32" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="CKyXVPHiAEKNYb21h67xXd" Comment="Device" Bounds="177,178,140,15" ShowValueBox="true" isIOBox="true" Value="Default">
+          <Pad Id="FOzp6o88apUOuTGlf2iOvk" Comment="Device" Bounds="324,150,140,15" ShowValueBox="true" isIOBox="true" Value="Default">
             <p:TypeAnnotation LastCategoryFullName="VL.ImagingSource" LastDependency="VL.Devices.TheImagingSource.vl">
               <Choice Kind="TypeFlag" Name="ImagingSourceDevice" />
             </p:TypeAnnotation>
           </Pad>
-          <Node Bounds="188,371,119,19" Id="H4hvZynbQMGQJz43opFm4r">
+          <Node Bounds="335,343,119,19" Id="CAozeBZzx4VLJEIzyb32Gm">
             <p:NodeReference LastCategoryFullName="Stride.Video" LastDependency="VL.Stride.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="VideoSourceToTexture" />
             </p:NodeReference>
-            <Pin Id="KIX3eyylkg8M930XdFF4tP" Name="Node Context" Kind="InputPin" IsHidden="true" />
-            <Pin Id="GhWQFIHQDtmMcOR1dCKLBH" Name="Input" Kind="InputPin" />
-            <Pin Id="BzFBJLiKWweQTp0TqXuAr6" Name="Fallback" Kind="InputPin" />
-            <Pin Id="H34WnzJcc0pLGdG5vpPKak" Name="Prefer Push" Kind="InputPin" />
-            <Pin Id="JJxAknaYWo4OuRv5X1yumx" Name="Prefer Gpu" Kind="InputPin" />
-            <Pin Id="SyTW74Sc2BzNuvHkZD4c8z" Name="Output" Kind="OutputPin" />
+            <Pin Id="IgAA621pec8QXiBKZEGkOZ" Name="Node Context" Kind="InputPin" IsHidden="true" />
+            <Pin Id="TB4kibufuGQOSw0xiF8Vjy" Name="Input" Kind="InputPin" />
+            <Pin Id="Eal5YcAPXWPOf9W5Sk1yjT" Name="Fallback" Kind="InputPin" />
+            <Pin Id="CYloDNT2aNVQZ0EnDsqV6p" Name="Prefer Push" Kind="InputPin" />
+            <Pin Id="Nbr1tZ8WQR6PLZYYMHj3j2" Name="Prefer Gpu" Kind="InputPin" />
+            <Pin Id="Bn72WRRmJs5NZvOl7VRLDf" Name="Output" Kind="OutputPin" />
           </Node>
-          <Pad Id="R6huxjVlkPQMuIioLDHCJm" Comment="" Bounds="190,462,190,132" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="CKagSj5oarBOQz96LpBQdU" Comment="Xxxxxxx" Bounds="376,371,342,69" ShowValueBox="true" isIOBox="true" Value="Framerate range: [1, 113.932], current FPS: 113.932000&#xD;&#xA; Width range: [256, 1440], current Width 640&#xD;&#xA; Height range: [256, 1440], current Height 480" />
+          <Pad Id="O0IuuuVMy9LNfcspcnMIUa" Comment="" Bounds="337,434,190,132" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="HEZv0rNfCBIMlSGbm5HwhL" Comment="Xxxxxxx" Bounds="523,343,342,69" ShowValueBox="true" isIOBox="true" Value="Framerate range: [1, 113.932], current FPS: 113.932000&#xD;&#xA; Width range: [256, 1440], current Width 640&#xD;&#xA; Height range: [256, 1440], current Height 480" />
         </Canvas>
-        <Patch Id="P1DzV3lM3z7QbZJQsw80ux" Name="Create" />
-        <Patch Id="NIcCoVuY1xUOQBSoynObsH" Name="Update" />
-        <ProcessDefinition Id="N5OnxmbCZmMLLqCmMoAsRI">
-          <Fragment Id="IMQp74O9gzuNWHP492F4nm" Patch="P1DzV3lM3z7QbZJQsw80ux" Enabled="true" />
-          <Fragment Id="DcfjJLxgrdgQcGoSIcjvzS" Patch="NIcCoVuY1xUOQBSoynObsH" Enabled="true" />
+        <Patch Id="FHRHmXJvODbMCp8DzoqUuv" Name="Create" />
+        <Patch Id="H1Kx9bCRYcoLD0G7PGQFn1" Name="Update" />
+        <!--
+
+    ************************  ************************
+
+-->
+        <ProcessDefinition Id="UUbxJx5XqqCNEpIaoCT1bM">
+          <Fragment Id="Uv1ofJB6DmjLQw1uwya64G" Patch="FHRHmXJvODbMCp8DzoqUuv" Enabled="true" />
+          <Fragment Id="LpPD0HZkMY4LeXlVIG7PEW" Patch="H1Kx9bCRYcoLD0G7PGQFn1" Enabled="true" />
         </ProcessDefinition>
-        <Link Id="KM5h7ErQVlQLvYHL8GQutG" Ids="EVt6BPhKO9iPQadZX1lqW6,DxMfN67j4meONuCfqqsuGM" />
-        <Link Id="M2ilKwgc8NRPp2UJGM6R1d" Ids="RLuaB994Ty2OWnrnYGG9aE,AtPaDpT12BLNj9wzykqQTK" />
-        <Link Id="IoSBemfCV48NQ4zRUtCTAM" Ids="CKyXVPHiAEKNYb21h67xXd,U2jbFiK3KLGLRvoPG7sIGA" />
-        <Link Id="JFDfkIVlZZtNhjmEZDpxZc" Ids="UAaWMLYpatgN1Rq6RIp0Ov,GhWQFIHQDtmMcOR1dCKLBH" />
-        <Link Id="KARusgj0CPJNh19IBcrMnU" Ids="SyTW74Sc2BzNuvHkZD4c8z,R6huxjVlkPQMuIioLDHCJm" />
-        <Link Id="VYjbvWl18RRN0ZIp3MxKoO" Ids="Iw86iqrKHvlPEmEXNV6tJZ,CKagSj5oarBOQz96LpBQdU" />
+        <Link Id="LpUgnDKHYprNAKvIXeEGQ2" Ids="NkSppnyK2TtLRiKatphrWO,M0lApEPpMXcM21Xeume95p" />
+        <Link Id="L2FEQSalcK5MJR0KTq7aPe" Ids="FmuuC52SChVPgJOd0GRRdu,NxFX0Y6GLl2LXtJ08VlCfQ" />
+        <Link Id="I8qyQiyb7JjMOAigtCYafa" Ids="FOzp6o88apUOuTGlf2iOvk,CJoLrs091J1PUN101DlxWz" />
+        <Link Id="VT1hwG87eRLOGT0v4CCpHm" Ids="QV19TE0fCuSLz7FPl1t120,TB4kibufuGQOSw0xiF8Vjy" />
+        <Link Id="VaNDrV55HgLNOWVdy8a0Rr" Ids="Bn72WRRmJs5NZvOl7VRLDf,O0IuuuVMy9LNfcspcnMIUa" />
+        <Link Id="OeWymYhTecTQaBFYalDbRQ" Ids="LvPOD9emrb9QcU3d7Ip627,HEZv0rNfCBIMlSGbm5HwhL" />
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="LLlxci18XJLQDw3LBCbD5q" Location="VL.Stride" Version="2024.6.0-0241-gd12e332872" />
-  <NugetDependency Id="PxG09Qv2xYzORmLjBXPw46" Location="VL.Devices.TheImagingSource" Version="0.0.0" />
+  <NugetDependency Id="KsQYvgw5NEpQPqf55BOVu1" Location="VL.Stride" Version="2024.6.0-0241-gd12e332872" />
+  <NugetDependency Id="D9nA8hhNHO8PbKW3S6co1I" Location="VL.Devices.TheImagingSource" Version="0.0.0" />
 </Document>

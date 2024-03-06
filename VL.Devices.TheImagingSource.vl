@@ -25,5 +25,5 @@
   </Patch>
   <NugetDependency Id="Ko9OqCOVyY7Pz8mbJrOqb0" Location="VL.CoreLib" Version="2024.6.0-0241-gd12e332872" />
   <NugetDependency Id="Ue7WBUz5IMWLnzxiqsi67g" Location="ic4dotnet" Version="1.0.0.2413" />
-  <PlatformDependency Id="CcYXvr4yRh3NtKMC33U1BW" Location="./lib/net6.0/VL.Devices.TheImagingSource.dll" IsForward="true" />
+  <PlatformDependency Id="CcYXvr4yRh3NtKMC33U1BW" Location="./lib/net8.0/VL.Devices.TheImagingSource.dll" IsForward="true" />
 </Document>
