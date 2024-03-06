@@ -1,6 +1,4 @@
-﻿using System.Reactive.Disposables;
-using System.Reflection;
-using System.Runtime.ExceptionServices;
+﻿using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using ic4;
 
@@ -45,7 +43,7 @@ namespace VL.ImagingSource
         // Exceptions:
         //   T:System.NotSupportedException:
         //     The platform is not supported
-        public static void Init(LogLevel apiLogLevel = LogLevel.Off, LogLevel internalLogLevel = LogLevel.Off, LogTarget logTargets = LogTarget.None, string logFilePath = null)
+        public static void Init(LogLevel apiLogLevel = LogLevel.Off, LogLevel internalLogLevel = LogLevel.Off, LogTarget logTargets = LogTarget.None, string? logFilePath = null)
         {
             lock (_handleLock)
             {
@@ -56,7 +54,7 @@ namespace VL.ImagingSource
 
                 CheckPlatformSupported();
 
-                _handle = NativeLibrary.Load("ic4core");
+                _handle = NativeLibrary.Load("ic4core", typeof(Library_DllLoadFix).Assembly, searchPath: default);
 
                 IC4_INIT_CONFIG iC4_INIT_CONFIG = default(IC4_INIT_CONFIG);
                 iC4_INIT_CONFIG.api_log_level = (IC4_LOG_LEVEL)apiLogLevel;
@@ -66,18 +64,20 @@ namespace VL.ImagingSource
                 IC4_INIT_CONFIG init_config = iC4_INIT_CONFIG;
                 if (!InitLibrary(ref init_config))
                 {
-                    var m = typeof(IC4Exception).GetMethod("ThrowLastError", BindingFlags.Static | BindingFlags.NonPublic);
-                    m!.Invoke(null, parameters: null);
+                    ThrowLastError();
                     //IC4Exception.ThrowLastError();
                 }
             }
         }
 
+        [UnsafeAccessor(UnsafeAccessorKind.StaticMethod)]
+        private static extern void ThrowLastError(IC4Exception? @this = null, int extraStackFrames = 0, bool throwIfNoError = true, IEnumerable<ErrorCode>? ignoreErrors = null);
+
         [DllImport("ic4core", EntryPoint = "ic4_init_library")]
         [return: MarshalAs(UnmanagedType.U1)]
-        public static extern bool InitLibrary(ref IC4_INIT_CONFIG init_config);
+        private static extern bool InitLibrary(ref IC4_INIT_CONFIG init_config);
 
-        public struct IC4_INIT_CONFIG
+        internal struct IC4_INIT_CONFIG
         {
             public IC4_LOG_LEVEL api_log_level;
 
@@ -86,7 +86,7 @@ namespace VL.ImagingSource
             public IC4_LOG_TARGET_FLAGS log_targets;
 
             [MarshalAs(UnmanagedType.LPStr)]
-            public string log_file;
+            public string? log_file;
         }
 
         internal enum IC4_LOG_LEVEL
