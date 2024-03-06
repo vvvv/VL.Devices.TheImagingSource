@@ -1,10 +1,11 @@
 ﻿using Microsoft.Extensions.Logging;
 using System.ComponentModel;
+using ic4;
 using VL.Lib.Basics.Video;
 using VL.Model;
-using ic4;
+using VL.Devices.TheImagingSource.Advanced;
 
-namespace VL.TheImagingSource
+namespace VL.Devices.TheImagingSource
 {
     [ProcessNode]
     public class VideoIn : IVideoSource2, IDisposable

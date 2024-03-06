@@ -1,11 +1,11 @@
 ﻿using CommunityToolkit.HighPerformance;
 using Microsoft.Extensions.Logging;
+using ic4;
 using VL.Lib.Basics.Resources;
 using VL.Lib.Basics.Video;
-using ic4;
 using LogLevel = Microsoft.Extensions.Logging.LogLevel;
 
-namespace VL.TheImagingSource
+namespace VL.Devices.TheImagingSource
 {
     internal class Acquisition : IVideoPlayer
     {

@@ -1,8 +1,8 @@
 ﻿using System.Reactive.Linq;
-using VL.Core.CompilerServices;
 using ic4;
+using VL.Core.CompilerServices;
 
-namespace VL.TheImagingSource;
+namespace VL.Devices.TheImagingSource.Advanced;
 
 [Serializable]
 public class ImagingSourceDevice : DynamicEnumBase<ImagingSourceDevice, ImagingSourceDeviceDefinition>
@@ -55,16 +55,16 @@ public class ImagingSourceDeviceDefinition : DynamicEnumDefinitionBase<ImagingSo
         {
             { "Default", DeviceEnum.Devices.FirstOrDefault()! }
         };
-        
-        foreach(var device in icDevices)
+
+        foreach (var device in icDevices)
         {
-            var name = device.ModelName + device.Serial;
-            if(!devices.ContainsKey(name))
+            var name = device.ModelName + " - " + device.Serial;
+            if (!devices.ContainsKey(name))
             {
                 devices.Add(name, device);
             }
         }
-        
+
         return devices;
     }
 
