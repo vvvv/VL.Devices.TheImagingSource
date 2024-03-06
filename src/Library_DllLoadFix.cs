@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using ic4;
 
-namespace VL.ImagingSource
+namespace VL.TheImagingSource
 {
     internal class Library_DllLoadFix
     {

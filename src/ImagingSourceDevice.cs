@@ -1,20 +1,8 @@
-﻿/// Steps to implement your own enum based on this template:
-/// 1) Rename "VideoOutput" to what your enum should be named
-/// 2) Rename "VideoOutputDefinition" accordingly
-/// 3) Implement the definitions GetEntries() 
-/// 
-/// For more details regarding the template, see:
-/// https://thegraybook.vvvv.org/reference/extending/writing-nodes.html#dynamic-enums
-
-using System.Reactive.Linq;
+﻿using System.Reactive.Linq;
 using VL.Core.CompilerServices;
-using VL.Lib.Collections;
-using VL.Lib;
-
 using ic4;
-using System.Reactive.Disposables;
 
-namespace VL.ImagingSource;
+namespace VL.TheImagingSource;
 
 [Serializable]
 public class ImagingSourceDevice : DynamicEnumBase<ImagingSourceDevice, ImagingSourceDeviceDefinition>

@@ -1,8 +1,7 @@
 ﻿using System.Reactive.Disposables;
 using System.Runtime.ExceptionServices;
-using ic4;
 
-namespace VL.ImagingSource
+namespace VL.TheImagingSource
 {
     internal class ImagingSourceLibrary
     {

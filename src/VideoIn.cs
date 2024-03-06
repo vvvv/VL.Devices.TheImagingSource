@@ -1,20 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Logging;
-using ic4;
+﻿using Microsoft.Extensions.Logging;
+using System.ComponentModel;
 using VL.Lib.Basics.Video;
 using VL.Model;
-//using VL.Core.Mathemathecth;
-using System.Security.AccessControl;
-using System.ComponentModel;
-using Stride.Core.Serialization.Serializers;
+using ic4;
 
-namespace VL.ImagingSource
+namespace VL.TheImagingSource
 {
     [ProcessNode]
     public class VideoIn : IVideoSource2, IDisposable
