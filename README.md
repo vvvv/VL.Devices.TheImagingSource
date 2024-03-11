@@ -19,3 +19,7 @@ For use with vvvv, the visual live-programming environment for .NET: http://visu
 
 ## Credits
 Based on the [IC Imaging Control 4 SDK](https://www.nuget.org/packages/ic4dotnet).
+
+## Sponsoring
+Development of this library was partially sponsored by:  
+* [ggml.io](http://ggml.io/)
