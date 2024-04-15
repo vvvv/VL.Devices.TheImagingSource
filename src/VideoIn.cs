@@ -4,6 +4,8 @@ using ic4;
 using VL.Lib.Basics.Video;
 using VL.Model;
 using VL.Devices.TheImagingSource.Advanced;
+using System.Collections;
+using System.Collections.Immutable;
 
 namespace VL.Devices.TheImagingSource
 {
@@ -17,9 +19,12 @@ namespace VL.Devices.TheImagingSource
         private DeviceInfo? _device;
         private Int2 _resolution;
         private int _fps;
+        private ImmutableDictionary<string, object> _parameters;
 
         internal string Info { get; set; } = "";
         //internal float Exposure { get; private set; }
+        internal object Value;
+        internal Spread<PropertyInfo> PropertiesInfo;
 
         public VideoIn([Pin(Visibility = PinVisibility.Hidden)] NodeContext nodeContext)
         {
@@ -32,7 +37,10 @@ namespace VL.Devices.TheImagingSource
             ImagingSourceDevice? device, 
             [DefaultValue("640, 480")] Int2 resolution,
             [DefaultValue("30")] int fps,
+            ImmutableDictionary<string, object> parameters,
             //float exposure,
+            out object Value,
+            out Spread<PropertyInfo> PropertiesInfo,
             out string Info)
         {
             /*
@@ -51,26 +59,47 @@ namespace VL.Devices.TheImagingSource
 
             // By comparing the device info we can be sure that on re-connect of the device we see the change
             // resolution and fps could be seted at runtime with grabber.propertymap
-            if (device?.Tag != _device || resolution != _resolution || fps != _fps)
+            if (device?.Tag != _device || resolution != _resolution || fps != _fps || parameters != _parameters)
             {
                 _device = device?.Tag as DeviceInfo;
                 _resolution = resolution;
                 _fps = fps;
+                _parameters = parameters;
                 _changedTicket++;
-            }            
-
-            if(this.Info != null)
-            {
-                Info = this.Info;
             }
-            else
-            {
-                Info = "";
-            }
-
+            
+            Value = this.Value;
+            PropertiesInfo = this.PropertiesInfo;
+            Info = this.Info;
+            
             return this;
         }
 
+
+        IVideoPlayer? IVideoSource2.Start(VideoPlaybackContext ctx)
+        {
+            var device = _device;
+            if (device is null)
+                return null;
+
+            try
+            {
+                return Acquisition.Start(this, device, _logger, _resolution, _fps, _parameters);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "Failed to start image acquisition");
+                return null;
+            }
+        }
+
+        int IVideoSource2.ChangedTicket => _changedTicket;
+
+        public void Dispose()
+        {
+            _ic4LibSubscription.Dispose();
+        }
+        
         /*
         private void ReadDeviceInfo(DeviceInfo device)
         {
@@ -110,28 +139,5 @@ namespace VL.Devices.TheImagingSource
         }
         */
 
-        IVideoPlayer? IVideoSource2.Start(VideoPlaybackContext ctx)
-        {
-            var device = _device;
-            if (device is null)
-                return null;
-
-            try
-            {
-                return Acquisition.Start(this, device, _logger, _resolution, _fps);
-            }
-            catch (Exception e)
-            {
-                _logger.LogError(e, "Failed to start image acquisition");
-                return null;
-            }
-        }
-
-        int IVideoSource2.ChangedTicket => _changedTicket;
-
-        public void Dispose()
-        {
-            _ic4LibSubscription.Dispose();
-        }
     }
 }
