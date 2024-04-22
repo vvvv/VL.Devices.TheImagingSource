@@ -11,7 +11,7 @@ namespace VL.Devices.TheImagingSource
 {
     internal class Acquisition : IVideoPlayer
     {
-        public static Acquisition? Start(VideoIn videoIn, DeviceInfo deviceInfo, ILogger logger, Int2 resolution, int fps, ImmutableDictionary<string, object> parameters)
+        public static Acquisition? Start(VideoIn videoIn, DeviceInfo deviceInfo, ILogger logger, Int2 resolution, int fps, IConfiguration configuration)
         {
             logger.Log(LogLevel.Information, "Starting image acquisition on {device}", deviceInfo.UniqueName);
 
@@ -29,7 +29,7 @@ namespace VL.Devices.TheImagingSource
                 logger.LogError("Failed to open device");
                 return null;
             }
-
+            
             // Set the frame rate and resolution
             var frameRate = pMap.Find(ic4.PropId.AcquisitionFrameRate);
             float maxFPS = (float)frameRate.Maximum;
@@ -43,54 +43,26 @@ namespace VL.Devices.TheImagingSource
             height.TrySetValue(Math.Max(Math.Min(resolution.Y, height.Maximum), height.Minimum)); //TrySetValue(resolution.Y);
 
             //apply static parameters
-            foreach (var param in parameters)
-            {
-                var p = pMap.Find(param.Key);
-                if (p != null)
-                {
-                    switch (p.Type) 
-                    {
-                        case PropertyType.Float: 
-                            var f = p as PropFloat;
-                            if (f != null) { f.TrySetValue((float)param.Value); }
-                            break;
-                        case PropertyType.Integer:
-                            var i = p as PropInteger;
-                            if (i != null) { i.TrySetValue((int)param.Value); }
-                            break;
-                        case PropertyType.Enumeration:
-                            var e = p as PropEnumeration;
-                            if (e != null) 
-                            { 
-                                if (e.Entries.Select(x => x.Name).Contains((string)param.Value))
-                                {
-                                    e.SelectedEntry = e.Entries.FirstOrDefault(x => x.Name == (string)param.Value);
-                                }
-                            }
-                            break;
-                        default:
-                            // cannot set value
-                            break;
-                    }
-                }
-            }
+            configuration?.Configure(pMap);
 
-            // Create a SnapSink. A SnapSink allows grabbing single images (or image sequences) out of a data stream.
+            // Create a SnapSink. InMemoryConfiguration SnapSink allows grabbing single images (or image sequences) out of a data stream.
             var sink = new SnapSink(acceptedPixelFormat: PixelFormat.BGRa8);
 
             // Setup data stream from the video capture device to the sink and start image acquisition.
             grabber.StreamSetup(sink, ic4.StreamSetupOption.AcquisitionStart);
 
-
+            //collect available properties
             var spb = new SpreadBuilder<PropertyInfo>();
-            CollectPropertiesInfos(spb, pMap);
+            var pv = new StringBuilder();
+            CollectPropertiesInfos(spb, pMap, pv);
             videoIn.PropertiesInfo = spb.ToSpread();
+            
+            videoIn.Info = $"Framerate range: [{minFPS}, {maxFPS}], current FPS: {pMap.GetValueString(ic4.PropId.AcquisitionFrameRate)}" +
+                           $"\r\nWidth range: [{width.Minimum}, {width.Maximum}], current Width {pMap.GetValueString(ic4.PropId.Width)}" +
+                           $"\r\nHeight range: [{height.Minimum}, {height.Maximum}], current Height {pMap.GetValueString(ic4.PropId.Height)}" +
+                           $"\r\n";
 
-            //return debug info
-            //videoIn.Value = pMap.FindEnumeration("ExposureAuto").Entries.Select(x => x.Name).ToSpread();
-            videoIn.Value = pMap.FindEnumeration("ExposureAuto").SelectedEntry.Name;
-
-            //flat list
+            //properites list
             string props = "";
             var allProps = pMap.All;
             foreach (var prop in allProps)
@@ -101,12 +73,7 @@ namespace VL.Devices.TheImagingSource
                         props += $"\r\n{prop.Name} ({prop.Type}) Description: {prop.Description}";
                     }
             }
-            videoIn.Info = $"Framerate range: [{minFPS}, {maxFPS}], current FPS: {pMap.GetValueString(ic4.PropId.AcquisitionFrameRate)}" +
-                           $"\r\nWidth range: [{width.Minimum}, {width.Maximum}], current Width {pMap.GetValueString(ic4.PropId.Width)}" +
-                           $"\r\nHeight range: [{height.Minimum}, {height.Maximum}], current Height {pMap.GetValueString(ic4.PropId.Height)}" +
-                           $"\r\n" +
-                           props + 
-                           $"\r\n";
+            videoIn.Info += props + $"\r\n";
 
             //properties tree
             Property r = pMap.FindCategory("Root");
@@ -117,7 +84,7 @@ namespace VL.Devices.TheImagingSource
             return new Acquisition(logger, grabber, sink, new Int2((int)width.Value, (int)height.Value), videoIn);//, frameRate.Value);
         }
         
-        static void CollectPropertiesInfos(SpreadBuilder<PropertyInfo> spb, PropertyMap propertyMap)
+        static void CollectPropertiesInfos(SpreadBuilder<PropertyInfo> spb, PropertyMap propertyMap, StringBuilder possibleValuies)
         {
             var props = propertyMap.All
                 .Where(x => x.IsAvailable)
@@ -129,18 +96,33 @@ namespace VL.Devices.TheImagingSource
                 switch (p.Type)
                 {
                     case PropertyType.Float:
-                        var f = p as PropFloat;
-                        if (f != null) { spb.Add(new PropertyInfo(f.Name, f.Value, f.Description, f.Minimum, f.Maximum)); }
+                        if (p is PropFloat f) 
+                        {
+                            spb.Add(new PropertyInfo(f.Name, f.Value, f.Description, f.Minimum, f.Maximum, Spread<string>.Empty)); 
+                        }
                         break;
                     case PropertyType.Integer:
-                        var i = p as PropInteger;
-                        if (i != null) { spb.Add(new PropertyInfo(i.Name, i.Value, i.Description, i.Minimum, i.Maximum)); }
+                        if (p is PropInteger i) 
+                        {
+                            spb.Add(new PropertyInfo(i.Name, i.Value, i.Description, i.Minimum, i.Maximum, Spread<string>.Empty)); 
+                        }
+                        break;
+                    case PropertyType.Boolean:
+                        if (p is PropBoolean b) 
+                        {
+                            spb.Add(new PropertyInfo(b.Name, b.Value, b.Description, false, true, Spread<string>.Empty)); 
+                        }
+                        break;
+                    case PropertyType.String:
+                        if (p is PropString s) 
+                        {
+                            spb.Add(new PropertyInfo(s.Name, s.Value, s.Description, "", s.MaxLength, Spread<string>.Empty)); 
+                        }
                         break;
                     case PropertyType.Enumeration:
-                        var e = p as PropEnumeration;
-                        if (e != null)
+                        if (p is PropEnumeration e)
                         {
-                            { spb.Add(new PropertyInfo(e.Name, e.SelectedEntry.Name, e.Description, "", "")); }
+                            spb.Add(new PropertyInfo(e.Name, e.SelectedEntry.Name, e.Description, "", "", e.Entries.Select(x => x.Name).ToSpread()));
                         }
                         break;
                     default:
@@ -150,12 +132,12 @@ namespace VL.Devices.TheImagingSource
             }
         }
 
+        
         static void TraverseCategories(StringBuilder sb, Property p, string offset)
         {
-            if (p.Type == PropertyType.Category)
+            if (p is PropCategory c)
             {
-                sb.AppendLine($"{offset}--{ p.Name} ({ p.Type}) Description: { p.Description}");
-                var c = p as PropCategory;
+                sb.AppendLine($"{offset}--{ c.Name} ({ c.Type}) Description: { c.Description}");
                 foreach (var cp in c.Features)
                 {
                     if (cp.IsAvailable && !(cp.IsReadonly || cp.IsLocked))
