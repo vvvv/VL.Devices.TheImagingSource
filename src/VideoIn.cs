@@ -4,8 +4,6 @@ using ic4;
 using VL.Lib.Basics.Video;
 using VL.Model;
 using VL.Devices.TheImagingSource.Advanced;
-using System.Collections;
-using System.Collections.Immutable;
 
 namespace VL.Devices.TheImagingSource
 {

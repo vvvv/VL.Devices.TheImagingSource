@@ -5,7 +5,6 @@ using VL.Lib.Basics.Resources;
 using VL.Lib.Basics.Video;
 using LogLevel = Microsoft.Extensions.Logging.LogLevel;
 using System.Text;
-using System.Collections.Immutable;
 
 namespace VL.Devices.TheImagingSource
 {
@@ -32,15 +31,13 @@ namespace VL.Devices.TheImagingSource
             
             // Set the frame rate and resolution
             var frameRate = pMap.Find(ic4.PropId.AcquisitionFrameRate);
-            float maxFPS = (float)frameRate.Maximum;
-            float minFPS = (float)frameRate.Minimum;
-            frameRate.TrySetValue(Math.Max(Math.Min(fps, maxFPS), minFPS));
+            frameRate.TrySetValue(Math.Max(Math.Min(fps, (float)frameRate.Maximum), (float)frameRate.Minimum));
             
             var width = pMap.Find(ic4.PropId.Width);
-            width.TrySetValue(Math.Max(Math.Min(resolution.X, width.Maximum), width.Minimum)); //TrySetValue(resolution.X);
+            width.TrySetValue(Math.Max(Math.Min(resolution.X, width.Maximum), width.Minimum));
 
             var height = pMap.Find(ic4.PropId.Height);
-            height.TrySetValue(Math.Max(Math.Min(resolution.Y, height.Maximum), height.Minimum)); //TrySetValue(resolution.Y);
+            height.TrySetValue(Math.Max(Math.Min(resolution.Y, height.Maximum), height.Minimum));
 
             //apply static parameters
             configuration?.Configure(pMap);
@@ -53,16 +50,15 @@ namespace VL.Devices.TheImagingSource
 
             //collect available properties
             var spb = new SpreadBuilder<PropertyInfo>();
-            var pv = new StringBuilder();
-            CollectPropertiesInfos(spb, pMap, pv);
+            CollectPropertiesInfos(spb, pMap);
             videoIn.PropertiesInfo = spb.ToSpread();
             
-            videoIn.Info = $"Framerate range: [{minFPS}, {maxFPS}], current FPS: {pMap.GetValueString(ic4.PropId.AcquisitionFrameRate)}" +
+            videoIn.Info = $"Framerate range: [{frameRate.Minimum}, {frameRate.Maximum}], current FPS: {pMap.GetValueString(ic4.PropId.AcquisitionFrameRate)}" +
                            $"\r\nWidth range: [{width.Minimum}, {width.Maximum}], current Width {pMap.GetValueString(ic4.PropId.Width)}" +
                            $"\r\nHeight range: [{height.Minimum}, {height.Maximum}], current Height {pMap.GetValueString(ic4.PropId.Height)}" +
                            $"\r\n";
 
-            //properites list
+            //debug properites list
             string props = "";
             var allProps = pMap.All;
             foreach (var prop in allProps)
@@ -75,16 +71,16 @@ namespace VL.Devices.TheImagingSource
             }
             videoIn.Info += props + $"\r\n";
 
-            //properties tree
+            //debug properties tree
             Property r = pMap.FindCategory("Root");
             var sb = new StringBuilder();
             TraverseCategories(sb, r, "");
             videoIn.Info += $"\r\n" + sb.ToString();
 
-            return new Acquisition(logger, grabber, sink, new Int2((int)width.Value, (int)height.Value), videoIn);//, frameRate.Value);
+            return new Acquisition(logger, grabber, sink, new Int2((int)width.Value, (int)height.Value), videoIn);
         }
         
-        static void CollectPropertiesInfos(SpreadBuilder<PropertyInfo> spb, PropertyMap propertyMap, StringBuilder possibleValuies)
+        static void CollectPropertiesInfos(SpreadBuilder<PropertyInfo> spb, PropertyMap propertyMap)
         {
             var props = propertyMap.All
                 .Where(x => x.IsAvailable)
