@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" xmlns:r="reflection" Id="O7uicvpTue7QOkn9pvT6h0" LanguageVersion="2024.6.3-0015-gd6867805c4" Version="0.128">
-  <NugetDependency Id="MtSbXB0fXjONs00wQwc2B1" Location="VL.CoreLib" Version="2024.6.3-0015-gd6867805c4" />
+<Document xmlns:p="property" xmlns:r="reflection" Id="O7uicvpTue7QOkn9pvT6h0" LanguageVersion="2024.6.3-0028-gef26394f82" Version="0.128">
+  <NugetDependency Id="MtSbXB0fXjONs00wQwc2B1" Location="VL.CoreLib" Version="2024.6.3-0028-gef26394f82" />
   <Patch Id="AYmy0M1i0HKOGdLzwQw0md">
     <Canvas Id="MgtF2r3NxUCLslHtjPAC3I" DefaultCategory="Main" BordersChecked="false" CanvasType="FullCategory" />
     <!--
@@ -15,7 +15,7 @@
       </p:NodeReference>
       <Patch Id="K31V9x29JQzNZ9xUH6mlEO">
         <Canvas Id="S5UFQhfBv22NEEs5IUmEIb" CanvasType="Group">
-          <Node Bounds="313,252,197,19" Id="SUkDgoCabtrPbycwDNQtvw">
+          <Node Bounds="432,527,226,19" Id="SUkDgoCabtrPbycwDNQtvw">
             <p:NodeReference LastCategoryFullName="VL.ImagingSource" LastDependency="VL.Devices.TheImagingSource.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="VideoIn" />
@@ -25,26 +25,26 @@
             <Pin Id="M0lApEPpMXcM21Xeume95p" Name="Resolution" Kind="InputPin" />
             <Pin Id="NxFX0Y6GLl2LXtJ08VlCfQ" Name="Fps" Kind="InputPin" />
             <Pin Id="QV19TE0fCuSLz7FPl1t120" Name="Output" Kind="OutputPin" />
-            <Pin Id="SFJZpFH7KBtOcuMNctASaM" Name="Properties Info" Kind="OutputPin" />
+            <Pin Id="TLN10Gfv6lyPXvrWb4oYQa" Name="Property Infos" Kind="OutputPin" />
             <Pin Id="LvPOD9emrb9QcU3d7Ip627" Name="Info" Kind="OutputPin" />
             <Pin Id="PYq7Xoh8ITkMsfkOwJj7S0" Name="Configuration" Kind="InputPin" />
           </Node>
-          <Pad Id="NkSppnyK2TtLRiKatphrWO" Bounds="381,167,35,28" ShowValueBox="true" isIOBox="true" Value="640, 480">
+          <Pad Id="NkSppnyK2TtLRiKatphrWO" Comment="Resolution" Bounds="479,435,35,28" ShowValueBox="true" isIOBox="true" Value="640, 480">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Int2" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="FmuuC52SChVPgJOd0GRRdu" Comment="Fps" Bounds="444,200,35,15" ShowValueBox="true" isIOBox="true" Value="30">
+          <Pad Id="FmuuC52SChVPgJOd0GRRdu" Comment="Fps" Bounds="541,465,32,17" ShowValueBox="true" isIOBox="true" Value="30">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Integer32" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="FOzp6o88apUOuTGlf2iOvk" Comment="Device" Bounds="316,127,151,15" ShowValueBox="true" isIOBox="true" Value="Default">
+          <Pad Id="FOzp6o88apUOuTGlf2iOvk" Comment="Device" Bounds="435,402,151,15" ShowValueBox="true" isIOBox="true" Value="Default">
             <p:TypeAnnotation LastCategoryFullName="VL.ImagingSource" LastDependency="VL.Devices.TheImagingSource.vl">
               <Choice Kind="TypeFlag" Name="ImagingSourceDevice" />
             </p:TypeAnnotation>
           </Pad>
-          <Node Bounds="135,408,119,19" Id="CAozeBZzx4VLJEIzyb32Gm">
+          <Node Bounds="249,765,119,19" Id="CAozeBZzx4VLJEIzyb32Gm">
             <p:NodeReference LastCategoryFullName="Stride.Video" LastDependency="VL.Stride.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="VideoSourceToTexture" />
@@ -56,76 +56,8 @@
             <Pin Id="Nbr1tZ8WQR6PLZYYMHj3j2" Name="Prefer Gpu" Kind="InputPin" />
             <Pin Id="Bn72WRRmJs5NZvOl7VRLDf" Name="Output" Kind="OutputPin" />
           </Node>
-          <Pad Id="O0IuuuVMy9LNfcspcnMIUa" Comment="" Bounds="137,457,189,209" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="HEZv0rNfCBIMlSGbm5HwhL" Comment="Xxxxxxx" Bounds="974,291,1548,1624" ShowValueBox="true" isIOBox="true" Value="Framerate range: [1, 113.932], current FPS: 30.000000&#xD;&#xA;Width range: [256, 1440], current Width 640&#xD;&#xA;Height range: [4, 1080], current Height 480&#xD;&#xA;&#xD;&#xA;TLParamsLocked (Integer) Description: Used by the Transport Layer to prevent critical features from changing during acquisition.&#xD;&#xA;UserSetSelector (Enumeration) Description: Selects the feature User Set to load, save or configure.&#xD;&#xA;UserSetDefault (Enumeration) Description: Selects the feature User Set to load and make active by default when the device is reset.&#xD;&#xA;AutoFunctionsROIEnable (Boolean) Description: Enable the region of interest for auto functions.&#xD;&#xA;AutoFunctionsROIPreset (Enumeration) Description: Select a predefined region of interest for auto functions.&#xD;&#xA;StrobeEnable (Enumeration) Description: StrobeEnable&#xD;&#xA;GPOut (Integer) Description: Status of the digital output pin.&#xD;&#xA;StrobePolarity (Enumeration) Description: StrobePolarity&#xD;&#xA;StrobeOperation (Enumeration) Description: StrobeOperation&#xD;&#xA;StrobeDelay (Integer) Description: StrobeDelay&#xD;&#xA;BlackLevel (Float) Description: Controls the analog black level as an absolute physical value. This represents a DC offset applied to the video signal&#xD;&#xA;BalanceWhiteMode (Enumeration) Description: Configures the way auto white balance works.&#xD;&#xA;BalanceWhiteAuto (Enumeration) Description: Controls the mode for automatic white balancing between the color channels. The white balancing ratios are automatically adjusted.&#xD;&#xA;BalanceRatioSelector (Enumeration) Description: This enumeration selects a balance ratio control to configuration. Once a balance ratio control has been selected, all changes to the balance ratio settings will be applied to the selected control.&#xD;&#xA;GainAutoUpperLimit (Float) Description: Upper limit of the GainAuto function.&#xD;&#xA;GainAutoLowerLimit (Float) Description: Lower limit of the GainAuto function.&#xD;&#xA;GainAuto (Enumeration) Description: Sets the automatic gain control mode.&#xD;&#xA;Gamma (Float) Description: Controls the gamma correction of pixel intensity. This is typically used to compensate for nonlinearity of the display system (such as CRT).&#xD;&#xA;ReverseY (Boolean) Description: Flip the image vertically.&#xD;&#xA;ReverseX (Boolean) Description: Flip the image horizontally.&#xD;&#xA;OffsetAutoCenter (Enumeration) Description: OffsetAutoCenter&#xD;&#xA;TestPendingAck (Integer) Description: Tests the device's pending acknowledge feature.&#xD;&#xA;DeviceTemperatureSelector (Enumeration) Description: Selects the location within the device, where the temperature will be measured.&#xD;&#xA;DeviceUserID (String) Description: User-programmable device identifier.&#xD;&#xA;IMXLowLatencyTriggerMode (Boolean) Description: Enables the low-latency mode for IMX global shutter sensors. This mode reduces the jitter between trigger input and exposure start, but disallows trigger overlap.&#xD;&#xA;TriggerDelay (Float) Description: Specifies the delay to apply after the trigger reception before activating it.&#xD;&#xA;TriggerActivation (Enumeration) Description: Specifies the activation mode of the trigger&#xD;&#xA;TriggerMode (Enumeration) Description: Controls if the selected trigger is active.&#xD;&#xA;TriggerSelector (Enumeration) Description: Selects the type of trigger to configure.&#xD;&#xA;ExposureAutoHighlightReduction (Boolean) Description: Lets the ExposureAuto/GainAuto algorithm try to avoid over-exposures.&#xD;&#xA;ExposureAutoUpperLimitAuto (Boolean) Description: Automatically sets the upper limit to match the Acquisition Frame Rate.&#xD;&#xA;ExposureAutoLowerLimit (Float) Description: Lower limit of the ExposureAuto function.&#xD;&#xA;ExposureAutoReference (Integer) Description: Configures the target image brightness of the ExposureAuto/GainAuto algorithm.&#xD;&#xA;ExposureAuto (Enumeration) Description: Sets the automatic exposure mode when ExposureMode is Timed.&#xD;&#xA;AcquisitionFrameRate (Float) Description: Controls the acquisition rate at which the frames are captured.&#xD;&#xA;AcquisitionMode (Enumeration) Description: Sets the acquisition mode of the device. It defines mainly the number of frames to capture during an acquisition and the way the acquisition stops.&#xD;&#xA;ColorTransformationEnable (Boolean) Description: Activates the selected Color Transformation module.&#xD;&#xA;ColorTransformationValueSelector (Enumeration) Description: Selects the Gain factor or Offset of the Transformation matrix to access in the selected Color Transformation module.&#xD;&#xA;ColorTransformationValue (Float) Description: Represents the value of the selected Gain factor or Offset inside the Transformation matrix.&#xD;&#xA;ColorTransformationSelector (Enumeration) Description: Selects which Color Transformation module is controlled by the various Color Transformation features.&#xD;&#xA;Saturation (Float) Description: Color Saturation.&#xD;&#xA;Hue (Float) Description: Color Hue.&#xD;&#xA;Contrast (Integer) Description: Controls Contrast.&#xD;&#xA;Sharpness (Integer) Description: Controls the strength of the sharpness algorithm.&#xD;&#xA;Denoise (Integer) Description: Controls the strength of the denoise algorithm.&#xD;&#xA;ShowOverlay (Boolean) Description: Show debug overlay in stream.&#xD;&#xA;ToneMappingEnable (Boolean) Description: Enables tone mapping.&#xD;&#xA;ToneMappingIntensity (Float) Description: Adjusts the intensity of the tone mapping algorithm.&#xD;&#xA;ToneMappingGlobalBrightness (Float) Description: Changes the brightness reference used for a individual pixel, which is interpolated between local and global.&#xD;&#xA;CameraRegisterAddress (Integer) Description: Address to use for CameraRegisterRead/Write&#xD;&#xA;CameraRegisterValue (Integer) Description: Contains the last value read by 'CameraRegisterRead' or the value to write for 'CameraRegisterWrite'.&#xD;&#xA;CameraRegisterAddressSpace (Register) Description: Reads or writes the data blob into the camera registers starting at 'CameraRegisterAddress'.&#xD;&#xA;&#xD;&#xA;--Root (Category) Description: Provides the Root of the GenICam features tree.&#xD;&#xA;    TLParamsLocked (Integer) Description: Used by the Transport Layer to prevent critical features from changing during acquisition.&#xD;&#xA;    --AutoFunctionsROI (Category) Description: Allows limiting the region of interest for auto functions (Auto Exposure, Auto Gain, Auto White Balance).&#xD;&#xA;        AutoFunctionsROIEnable (Boolean) Description: Enable the region of interest for auto functions.&#xD;&#xA;        AutoFunctionsROIPreset (Enumeration) Description: Select a predefined region of interest for auto functions.&#xD;&#xA;    --DigitalIO (Category) Description: DigitalIO&#xD;&#xA;        StrobeEnable (Enumeration) Description: StrobeEnable&#xD;&#xA;        GPOut (Integer) Description: Status of the digital output pin.&#xD;&#xA;        StrobePolarity (Enumeration) Description: StrobePolarity&#xD;&#xA;        StrobeOperation (Enumeration) Description: StrobeOperation&#xD;&#xA;        StrobeDelay (Integer) Description: StrobeDelay&#xD;&#xA;    --ColorTransformationControl (Category) Description: Category that contains the Color Transformation control features.&#xD;&#xA;        --SoftwareColorTransformationControl (Category) Description: Category that contains the Software Color Transformation control features.&#xD;&#xA;            ColorTransformationEnable (Boolean) Description: Activates the selected Color Transformation module.&#xD;&#xA;            ColorTransformationValueSelector (Enumeration) Description: Selects the Gain factor or Offset of the Transformation matrix to access in the selected Color Transformation module.&#xD;&#xA;            ColorTransformationValue (Float) Description: Represents the value of the selected Gain factor or Offset inside the Transformation matrix.&#xD;&#xA;            ColorTransformationSelector (Enumeration) Description: Selects which Color Transformation module is controlled by the various Color Transformation features.&#xD;&#xA;            Saturation (Float) Description: Color Saturation.&#xD;&#xA;            Hue (Float) Description: Color Hue.&#xD;&#xA;    --SoftwareTransformControl (Category) Description: Software transform control properties&#xD;&#xA;        Contrast (Integer) Description: Controls Contrast.&#xD;&#xA;        Sharpness (Integer) Description: Controls the strength of the sharpness algorithm.&#xD;&#xA;        Denoise (Integer) Description: Controls the strength of the denoise algorithm.&#xD;&#xA;        ShowOverlay (Boolean) Description: Show debug overlay in stream.&#xD;&#xA;        --ToneMappingControl (Category) Description: Category that contains the ToneMapping control features.&#xD;&#xA;            ToneMappingEnable (Boolean) Description: Enables tone mapping.&#xD;&#xA;            ToneMappingIntensity (Float) Description: Adjusts the intensity of the tone mapping algorithm.&#xD;&#xA;            ToneMappingGlobalBrightness (Float) Description: Changes the brightness reference used for a individual pixel, which is interpolated between local and global.&#xD;&#xA;    --CameraRegisterControl (Category) Description: Controls to directly access the camera registers.&#xD;&#xA;        CameraRegisterAddress (Integer) Description: Address to use for CameraRegisterRead/Write&#xD;&#xA;        CameraRegisterValue (Integer) Description: Contains the last value read by 'CameraRegisterRead' or the value to write for 'CameraRegisterWrite'.&#xD;&#xA;        CameraRegisterRead (Command) Description: Read the camera register at 'CameraRegisterAddress' into 'CameraRegisterValue'.&#xD;&#xA;        CameraRegisterWrite (Command) Description: Write the contents of 'CameraRegisterValue' at the address of 'CameraRegisterAddress'.&#xD;&#xA;        CameraRegisterAddressSpace (Register) Description: Reads or writes the data blob into the camera registers starting at 'CameraRegisterAddress'.&#xD;&#xA;" />
-          <Node Bounds="698,-73,248,244" Id="Hd8UDpb8bF3L4w9IdS4tD2">
-            <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
-              <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
-              <CategoryReference Kind="Category" Name="Primitive" />
-              <Choice Kind="ProcessStatefulRegion" Name="Cache" />
-            </p:NodeReference>
-            <Pin Id="JuP1CF6HeMcNZeFm0vTd0x" Name="Force" Kind="InputPin" />
-            <Pin Id="GvSVuNtt9ncNQDwdq7zwgE" Name="Dispose Cached Outputs" Kind="InputPin" />
-            <Pin Id="FXUgK4XFdIbMFyVAK40iOh" Name="Has Changed" Kind="OutputPin" />
-            <Patch Id="KPPcJKS1R78PsJhEHPGmNI" ManuallySortedPins="true">
-              <Patch Id="U7m5eTBiI8ANjq1MrQQp9t" Name="Create" ManuallySortedPins="true" />
-              <Patch Id="P1isjCbLZIjMPdsBoGctOp" Name="Then" ManuallySortedPins="true" />
-              <Node Bounds="710,24,53,26" Id="DP1B6A216r6QJ0oM6hFD7P">
-                <p:NodeReference LastCategoryFullName="Collections.Dictionary" LastDependency="VL.CoreLib.vl">
-                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                  <CategoryReference Kind="4026531840" Name="Dictionary" />
-                  <Choice Kind="OperationCallFlag" Name="SetItem" />
-                </p:NodeReference>
-                <Pin Id="PtttCsujdrnNDHPFnqk8dx" Name="Input" Kind="StateInputPin" />
-                <Pin Id="UayR9EnaWImQPynyfBTKsr" Name="Key" Kind="InputPin" />
-                <Pin Id="Le6BWu8qMzNN5PlNuZcItK" Name="Value" Kind="InputPin" />
-                <Pin Id="U8YMlczYF5uLBSPm6WsRPt" Name="Output" Kind="StateOutputPin" />
-              </Node>
-              <Pad Id="EKF4oRuz7h8N67SVQve5Rg" Comment="Key" Bounds="739,-45,103,15" ShowValueBox="true" isIOBox="true" Value="ExposureAuto">
-                <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
-                  <Choice Kind="ImmutableTypeFlag" Name="String" />
-                </p:TypeAnnotation>
-              </Pad>
-              <Pad Id="BaPp6umgoY8LQlvURPFH9b" Comment="" Bounds="762,-18,63,15" ShowValueBox="true" isIOBox="true" Value="Continuous">
-                <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
-                  <Choice Kind="ImmutableTypeFlag" Name="String" />
-                </p:TypeAnnotation>
-              </Pad>
-              <Node Bounds="710,107,224,26" Id="Rz5ST7m0GdENySblBHONRW">
-                <p:NodeReference LastCategoryFullName="Collections.Dictionary" LastDependency="VL.CoreLib.vl">
-                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                  <CategoryReference Kind="4026531840" Name="Dictionary" />
-                  <Choice Kind="OperationCallFlag" Name="SetItem" />
-                </p:NodeReference>
-                <Pin Id="KUB6D7LjUIJPxu0pT8qg4c" Name="Input" Kind="StateInputPin" />
-                <Pin Id="C5bi6TDvEzJOQBpkNwUWeo" Name="Key" Kind="InputPin" />
-                <Pin Id="HFRGjSLF9JYLgZaKXcEOvb" Name="Value" Kind="InputPin" />
-                <Pin Id="CBBm5eyuvJuOmZa4F7tfjt" Name="Output" Kind="StateOutputPin" />
-                <Pin Id="G3XBniwMwkpNQTeWjzbQxz" Name="Apply" Kind="InputPin" DefaultValue="True" />
-              </Node>
-              <Pad Id="KEP1aKFhaYNMkntTrvJ9dT" Comment="Key" Bounds="785,72,71,15" ShowValueBox="true" isIOBox="true" Value="Gamma">
-                <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
-                  <Choice Kind="ImmutableTypeFlag" Name="String" />
-                </p:TypeAnnotation>
-              </Pad>
-              <Pad Id="Akk3cv8OzOsOyvWSPOlVzU" Comment="" Bounds="781,11,63,15" ShowValueBox="true" isIOBox="true" Value="Off">
-                <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
-                  <Choice Kind="ImmutableTypeFlag" Name="String" />
-                </p:TypeAnnotation>
-              </Pad>
-            </Patch>
-            <ControlPoint Id="Qmcx2FrtptPPOSXG4AOXpM" Bounds="712,165" Alignment="Bottom" />
-            <ControlPoint Id="Mes4RCnFZPBMIcwFUrIFtZ" Bounds="861,-67" Alignment="Top" />
-          </Node>
-          <Pad Id="K2it8aUlv2gQbpI0eLk3sz" Comment="Force" Bounds="700,-138,35,35" ShowValueBox="true" isIOBox="true" Value="False">
-            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
-              <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
-            </p:TypeAnnotation>
-            <p:ValueBoxSettings>
-              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
-            </p:ValueBoxSettings>
-          </Pad>
-          <Node Bounds="409,385,52,19" Id="DugrktfhzoFNe0yp70mSJR">
+          <Pad Id="HEZv0rNfCBIMlSGbm5HwhL" Comment="Xxxxxxx" Bounds="655,587,272,61" ShowValueBox="true" isIOBox="true" Value="Framerate range: [1, 113.932], current FPS: 30.000000&#xD;&#xA;Width range: [256, 1440], current Width 640&#xD;&#xA;Height range: [4, 1080], current Height 480&#xD;&#xA;&#xD;&#xA;TLParamsLocked (Integer) Description: Used by the Transport Layer to prevent critical features from changing during acquisition.&#xD;&#xA;UserSetSelector (Enumeration) Description: Selects the feature User Set to load, save or configure.&#xD;&#xA;UserSetDefault (Enumeration) Description: Selects the feature User Set to load and make active by default when the device is reset.&#xD;&#xA;AutoFunctionsROIEnable (Boolean) Description: Enable the region of interest for auto functions.&#xD;&#xA;AutoFunctionsROIPreset (Enumeration) Description: Select a predefined region of interest for auto functions.&#xD;&#xA;StrobeEnable (Enumeration) Description: StrobeEnable&#xD;&#xA;GPOut (Integer) Description: Status of the digital output pin.&#xD;&#xA;StrobePolarity (Enumeration) Description: StrobePolarity&#xD;&#xA;StrobeOperation (Enumeration) Description: StrobeOperation&#xD;&#xA;StrobeDelay (Integer) Description: StrobeDelay&#xD;&#xA;BlackLevel (Float) Description: Controls the analog black level as an absolute physical value. This represents a DC offset applied to the video signal&#xD;&#xA;BalanceWhiteMode (Enumeration) Description: Configures the way auto white balance works.&#xD;&#xA;BalanceWhiteAuto (Enumeration) Description: Controls the mode for automatic white balancing between the color channels. The white balancing ratios are automatically adjusted.&#xD;&#xA;BalanceRatioSelector (Enumeration) Description: This enumeration selects a balance ratio control to configuration. Once a balance ratio control has been selected, all changes to the balance ratio settings will be applied to the selected control.&#xD;&#xA;GainAutoUpperLimit (Float) Description: Upper limit of the GainAuto function.&#xD;&#xA;GainAutoLowerLimit (Float) Description: Lower limit of the GainAuto function.&#xD;&#xA;GainAuto (Enumeration) Description: Sets the automatic gain control mode.&#xD;&#xA;Gamma (Float) Description: Controls the gamma correction of pixel intensity. This is typically used to compensate for nonlinearity of the display system (such as CRT).&#xD;&#xA;ReverseY (Boolean) Description: Flip the image vertically.&#xD;&#xA;ReverseX (Boolean) Description: Flip the image horizontally.&#xD;&#xA;OffsetAutoCenter (Enumeration) Description: OffsetAutoCenter&#xD;&#xA;TestPendingAck (Integer) Description: Tests the device's pending acknowledge feature.&#xD;&#xA;DeviceTemperatureSelector (Enumeration) Description: Selects the location within the device, where the temperature will be measured.&#xD;&#xA;DeviceUserID (String) Description: User-programmable device identifier.&#xD;&#xA;IMXLowLatencyTriggerMode (Boolean) Description: Enables the low-latency mode for IMX global shutter sensors. This mode reduces the jitter between trigger input and exposure start, but disallows trigger overlap.&#xD;&#xA;TriggerDelay (Float) Description: Specifies the delay to apply after the trigger reception before activating it.&#xD;&#xA;TriggerActivation (Enumeration) Description: Specifies the activation mode of the trigger&#xD;&#xA;TriggerMode (Enumeration) Description: Controls if the selected trigger is active.&#xD;&#xA;TriggerSelector (Enumeration) Description: Selects the type of trigger to configure.&#xD;&#xA;ExposureAutoHighlightReduction (Boolean) Description: Lets the ExposureAuto/GainAuto algorithm try to avoid over-exposures.&#xD;&#xA;ExposureAutoUpperLimitAuto (Boolean) Description: Automatically sets the upper limit to match the Acquisition Frame Rate.&#xD;&#xA;ExposureAutoLowerLimit (Float) Description: Lower limit of the ExposureAuto function.&#xD;&#xA;ExposureAutoReference (Integer) Description: Configures the target image brightness of the ExposureAuto/GainAuto algorithm.&#xD;&#xA;ExposureAuto (Enumeration) Description: Sets the automatic exposure mode when ExposureMode is Timed.&#xD;&#xA;AcquisitionFrameRate (Float) Description: Controls the acquisition rate at which the frames are captured.&#xD;&#xA;AcquisitionMode (Enumeration) Description: Sets the acquisition mode of the device. It defines mainly the number of frames to capture during an acquisition and the way the acquisition stops.&#xD;&#xA;ColorTransformationEnable (Boolean) Description: Activates the selected Color Transformation module.&#xD;&#xA;ColorTransformationValueSelector (Enumeration) Description: Selects the Gain factor or Offset of the Transformation matrix to access in the selected Color Transformation module.&#xD;&#xA;ColorTransformationValue (Float) Description: Represents the value of the selected Gain factor or Offset inside the Transformation matrix.&#xD;&#xA;ColorTransformationSelector (Enumeration) Description: Selects which Color Transformation module is controlled by the various Color Transformation features.&#xD;&#xA;Saturation (Float) Description: Color Saturation.&#xD;&#xA;Hue (Float) Description: Color Hue.&#xD;&#xA;Contrast (Integer) Description: Controls Contrast.&#xD;&#xA;Sharpness (Integer) Description: Controls the strength of the sharpness algorithm.&#xD;&#xA;Denoise (Integer) Description: Controls the strength of the denoise algorithm.&#xD;&#xA;ShowOverlay (Boolean) Description: Show debug overlay in stream.&#xD;&#xA;ToneMappingEnable (Boolean) Description: Enables tone mapping.&#xD;&#xA;ToneMappingIntensity (Float) Description: Adjusts the intensity of the tone mapping algorithm.&#xD;&#xA;ToneMappingGlobalBrightness (Float) Description: Changes the brightness reference used for a individual pixel, which is interpolated between local and global.&#xD;&#xA;CameraRegisterAddress (Integer) Description: Address to use for CameraRegisterRead/Write&#xD;&#xA;CameraRegisterValue (Integer) Description: Contains the last value read by 'CameraRegisterRead' or the value to write for 'CameraRegisterWrite'.&#xD;&#xA;CameraRegisterAddressSpace (Register) Description: Reads or writes the data blob into the camera registers starting at 'CameraRegisterAddress'.&#xD;&#xA;&#xD;&#xA;--Root (Category) Description: Provides the Root of the GenICam features tree.&#xD;&#xA;    TLParamsLocked (Integer) Description: Used by the Transport Layer to prevent critical features from changing during acquisition.&#xD;&#xA;    --AutoFunctionsROI (Category) Description: Allows limiting the region of interest for auto functions (Auto Exposure, Auto Gain, Auto White Balance).&#xD;&#xA;        AutoFunctionsROIEnable (Boolean) Description: Enable the region of interest for auto functions.&#xD;&#xA;        AutoFunctionsROIPreset (Enumeration) Description: Select a predefined region of interest for auto functions.&#xD;&#xA;    --DigitalIO (Category) Description: DigitalIO&#xD;&#xA;        StrobeEnable (Enumeration) Description: StrobeEnable&#xD;&#xA;        GPOut (Integer) Description: Status of the digital output pin.&#xD;&#xA;        StrobePolarity (Enumeration) Description: StrobePolarity&#xD;&#xA;        StrobeOperation (Enumeration) Description: StrobeOperation&#xD;&#xA;        StrobeDelay (Integer) Description: StrobeDelay&#xD;&#xA;    --ColorTransformationControl (Category) Description: Category that contains the Color Transformation control features.&#xD;&#xA;        --SoftwareColorTransformationControl (Category) Description: Category that contains the Software Color Transformation control features.&#xD;&#xA;            ColorTransformationEnable (Boolean) Description: Activates the selected Color Transformation module.&#xD;&#xA;            ColorTransformationValueSelector (Enumeration) Description: Selects the Gain factor or Offset of the Transformation matrix to access in the selected Color Transformation module.&#xD;&#xA;            ColorTransformationValue (Float) Description: Represents the value of the selected Gain factor or Offset inside the Transformation matrix.&#xD;&#xA;            ColorTransformationSelector (Enumeration) Description: Selects which Color Transformation module is controlled by the various Color Transformation features.&#xD;&#xA;            Saturation (Float) Description: Color Saturation.&#xD;&#xA;            Hue (Float) Description: Color Hue.&#xD;&#xA;    --SoftwareTransformControl (Category) Description: Software transform control properties&#xD;&#xA;        Contrast (Integer) Description: Controls Contrast.&#xD;&#xA;        Sharpness (Integer) Description: Controls the strength of the sharpness algorithm.&#xD;&#xA;        Denoise (Integer) Description: Controls the strength of the denoise algorithm.&#xD;&#xA;        ShowOverlay (Boolean) Description: Show debug overlay in stream.&#xD;&#xA;        --ToneMappingControl (Category) Description: Category that contains the ToneMapping control features.&#xD;&#xA;            ToneMappingEnable (Boolean) Description: Enables tone mapping.&#xD;&#xA;            ToneMappingIntensity (Float) Description: Adjusts the intensity of the tone mapping algorithm.&#xD;&#xA;            ToneMappingGlobalBrightness (Float) Description: Changes the brightness reference used for a individual pixel, which is interpolated between local and global.&#xD;&#xA;    --CameraRegisterControl (Category) Description: Controls to directly access the camera registers.&#xD;&#xA;        CameraRegisterAddress (Integer) Description: Address to use for CameraRegisterRead/Write&#xD;&#xA;        CameraRegisterValue (Integer) Description: Contains the last value read by 'CameraRegisterRead' or the value to write for 'CameraRegisterWrite'.&#xD;&#xA;        CameraRegisterRead (Command) Description: Read the camera register at 'CameraRegisterAddress' into 'CameraRegisterValue'.&#xD;&#xA;        CameraRegisterWrite (Command) Description: Write the contents of 'CameraRegisterValue' at the address of 'CameraRegisterAddress'.&#xD;&#xA;        CameraRegisterAddressSpace (Register) Description: Reads or writes the data blob into the camera registers starting at 'CameraRegisterAddress'.&#xD;&#xA;" />
+          <Node Bounds="657,702,52,19" Id="DugrktfhzoFNe0yp70mSJR">
             <p:NodeReference LastCategoryFullName="Collections.Spread" LastDependency="VL.CoreLib.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <FullNameCategoryReference ID="Collections.Spread" />
@@ -136,31 +68,18 @@
             <Pin Id="FAmW1FNiVvxN7E3h3MfLbP" Name="Index" Kind="InputPin" />
             <Pin Id="TSOuo0z2Z5QPvXIDMZ2ZUi" Name="Result" Kind="OutputPin" />
           </Node>
-          <Pad Id="MFWybYLFhSjMtaMhy9Ha37" Comment="Index" Bounds="473,349,35,15" ShowValueBox="true" isIOBox="true" Value="17">
+          <Pad Id="MFWybYLFhSjMtaMhy9Ha37" Comment="Index" Bounds="707,675,35,15" ShowValueBox="true" isIOBox="true" Value="24">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Integer32" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="AoAaPu0kIhMLERAMMmxx8v" Comment="" Bounds="868,-139,35,15" ShowValueBox="true" isIOBox="true" Value="1.09">
-            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
-              <Choice Kind="ImmutableTypeFlag" Name="Float32" />
-            </p:TypeAnnotation>
-          </Pad>
-          <Pad Id="Ejc4CqRS8nrLWTRUiH0Kaf" Comment="Description" Bounds="637,821,242,48" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="SFP6kmjbfuTOtPpAjxYTw7" Comment="Current Value" Bounds="581,888,157,51" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="VTazQZwBQf1OS1QYNCVjak" Comment="Maximum" Bounds="542,963,190,132" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="TOrW3bB8zMJQBZFBFmrBrt" Comment="Name" Bounds="672,757,184,32" ShowValueBox="true" isIOBox="true" Value="StrobePolarity" />
-          <Pad Id="Br7BdNtpDGiMWkuJxnkdMr" Comment="Maximum" Bounds="512,1115,190,132" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="HkfwgGuXeN6MaaAE6QLAH2" Comment="Entries" Bounds="474,1254,141,49" ShowValueBox="true" isIOBox="true" />
-          <Node Bounds="710,208,147,19" Id="ETcZTqyPopPQVgIVn6WIJ9">
-            <p:NodeReference LastCategoryFullName="Devices.TheImagingSource" LastDependency="VL.Devices.TheImagingSource.vl">
-              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <Choice Kind="ProcessAppFlag" Name="InMemoryConfigurationNode" />
-            </p:NodeReference>
-            <Pin Id="EF4Snd6kldSMZkH5KHh5iV" Name="Parameters" Kind="InputPin" />
-            <Pin Id="DfBRpc8iBiTMIiuJq0lWxm" Name="Result" Kind="OutputPin" />
-          </Node>
-          <Node Bounds="397,450,292,275" Id="G50KzOKqMDPNa8NyGlfrxd">
+          <Pad Id="Ejc4CqRS8nrLWTRUiH0Kaf" Comment="Description" Bounds="730,1218,242,48" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="SFP6kmjbfuTOtPpAjxYTw7" Comment="Current Value" Bounds="699,1281,157,51" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="VTazQZwBQf1OS1QYNCVjak" Comment="Maximum" Bounds="778,1102,175,43" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="TOrW3bB8zMJQBZFBFmrBrt" Comment="Name" Bounds="679,1351,184,32" ShowValueBox="true" isIOBox="true" Value="StrobePolarity" />
+          <Pad Id="Br7BdNtpDGiMWkuJxnkdMr" Comment="Minimum" Bounds="754,1154,116,49" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="HkfwgGuXeN6MaaAE6QLAH2" Comment="Entries" Bounds="803,1028,141,65" ShowValueBox="true" isIOBox="true" />
+          <Node Bounds="642,786,298,87" Id="G50KzOKqMDPNa8NyGlfrxd">
             <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
               <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
               <CategoryReference Kind="Category" Name="Primitive" />
@@ -170,81 +89,45 @@
             <Patch Id="Fz3DC3IW3OcNFz9gkZIZAC" ManuallySortedPins="true">
               <Patch Id="Ih6kOb0vekuOllprftNTBC" Name="Create" ManuallySortedPins="true" />
               <Patch Id="Q5qACjYMxqUNu4vz3AAkZF" Name="Then" ManuallySortedPins="true" />
-              <Node Bounds="409,510,232,26" Id="HSA0JspeaKbNgzsKyDdqcq">
-                <p:NodeReference LastCategoryFullName="Devices.TheImagingSource.PropertyInfo" LastDependency="VL.Devices.TheImagingSource.vl">
-                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                  <CategoryReference Kind="ClassType" Name="PropertyInfo" />
-                  <Choice Kind="OperationCallFlag" Name="Description" />
-                </p:NodeReference>
-                <Pin Id="Au8q3Z8CxqJO6P9viijiho" Name="Input" Kind="StateInputPin" />
-                <Pin Id="JbIhMO7bhhtMR0kYMciHvC" Name="Output" Kind="StateOutputPin" />
-                <Pin Id="FZvLkzJUkTPLSzBoZ2ugyy" Name="Description" Kind="OutputPin" />
-              </Node>
-              <Node Bounds="409,551,170,26" Id="QtxA2QZS11WPpIEXtxiW1H">
+              <Node Bounds="654,810,228,26" Id="PAblQ7kftdlMQcJHD8fRzx">
                 <p:NodeReference LastCategoryFullName="Devices.TheImagingSource.PropertyInfo" LastDependency="VL.Devices.TheImagingSource.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <FullNameCategoryReference ID="Devices.TheImagingSource.PropertyInfo" />
-                  <Choice Kind="OperationCallFlag" Name="CurrentValue" />
+                  <Choice Kind="OperationCallFlag" Name="Deconstruct" />
                 </p:NodeReference>
-                <Pin Id="KiGlVmjhPL6MHXfHift0zE" Name="Input" Kind="StateInputPin" />
-                <Pin Id="Mw8AQuBZn6QMy3kbmPjJCX" Name="Output" Kind="StateOutputPin" />
-                <Pin Id="FSy2NtyC94aNnveFtGPp8P" Name="Current Value" Kind="OutputPin" />
-              </Node>
-              <Node Bounds="409,595,131,26" Id="SUqpsiqiy8vMSMpP5Rlo5x">
-                <p:NodeReference LastCategoryFullName="Devices.TheImagingSource.PropertyInfo" LastDependency="VL.Devices.TheImagingSource.vl">
-                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                  <FullNameCategoryReference ID="Devices.TheImagingSource.PropertyInfo" />
-                  <Choice Kind="OperationCallFlag" Name="Maximum" />
-                </p:NodeReference>
-                <Pin Id="JOhqpotVdadL4qYnbUhjgg" Name="Input" Kind="StateInputPin" />
-                <Pin Id="Sa140iIaJC1QYLVEVeeNa3" Name="Output" Kind="StateOutputPin" />
-                <Pin Id="UzQ77UoQuT4M6Z2dfuUMYZ" Name="Maximum" Kind="OutputPin" />
-              </Node>
-              <Node Bounds="409,473,268,26" Id="NdJYlaQVsBINwkL5OvybfQ">
-                <p:NodeReference LastCategoryFullName="Devices.TheImagingSource.PropertyInfo" LastDependency="VL.Devices.TheImagingSource.vl">
-                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                  <FullNameCategoryReference ID="Devices.TheImagingSource.PropertyInfo" />
-                  <Choice Kind="OperationCallFlag" Name="Name" />
-                </p:NodeReference>
-                <Pin Id="US1MsEAFWfcQOqrdx2YaqZ" Name="Input" Kind="StateInputPin" />
-                <Pin Id="VYLI1ScI8YBMzcyR4WQSSV" Name="Output" Kind="StateOutputPin" />
-                <Pin Id="PAuj1g2l57cNBCWMlkHYnC" Name="Name" Kind="OutputPin" />
-              </Node>
-              <Node Bounds="409,637,100,26" Id="SXwmYlgbf6xNHuQzeGEI6a">
-                <p:NodeReference LastCategoryFullName="Devices.TheImagingSource.PropertyInfo" LastDependency="VL.Devices.TheImagingSource.vl">
-                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                  <FullNameCategoryReference ID="Devices.TheImagingSource.PropertyInfo" />
-                  <Choice Kind="OperationCallFlag" Name="Minimum" />
-                </p:NodeReference>
-                <Pin Id="N3vppj3KI0PPwrqzkT4wgx" Name="Input" Kind="StateInputPin" />
-                <Pin Id="Kluhn26DR1oLUqCC4EVfLu" Name="Output" Kind="StateOutputPin" />
-                <Pin Id="HTvyzoNVbUaPwHBHU3eBo4" Name="Minimum" Kind="OutputPin" />
-              </Node>
-              <Node Bounds="409,679,60,26" Id="Ei9aLGe0PTwMJBxZNRZnF5">
-                <p:NodeReference LastCategoryFullName="Devices.TheImagingSource.PropertyInfo" LastDependency="VL.Devices.TheImagingSource.vl">
-                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                  <FullNameCategoryReference ID="Devices.TheImagingSource.PropertyInfo" />
-                  <Choice Kind="OperationCallFlag" Name="Entries" />
-                </p:NodeReference>
-                <Pin Id="E8iI5mPZfZaNDbIMK4M3FL" Name="Input" Kind="StateInputPin" />
-                <Pin Id="QV50qW1dZ4lLnNXplbs1JY" Name="Output" Kind="StateOutputPin" />
-                <Pin Id="Dtd0vtVJSLoQBhALhpH5EX" Name="Entries" Kind="OutputPin" />
+                <Pin Id="MN5LOjjIGK2QFXYv1q1oGo" Name="Input" Kind="StateInputPin" />
+                <Pin Id="Ngkt68AT8SNP3EnAfsjS0K" Name="Output" Kind="StateOutputPin" />
+                <Pin Id="RDq1Tk3OTh2MkZ4WGFRM8P" Name="Name" Kind="OutputPin" />
+                <Pin Id="RXM0XX8lKK9Mf0E1tsWJxf" Name="Current Value" Kind="OutputPin" />
+                <Pin Id="OinOcbPPFhlPQ4SofJ1X85" Name="Description" Kind="OutputPin" />
+                <Pin Id="Kf2uoTURHLuN2ArMMWYkBu" Name="Minimum" Kind="OutputPin" />
+                <Pin Id="ML2PL4GljmWN8NCPGuMg1a" Name="Maximum" Kind="OutputPin" />
+                <Pin Id="N7h8qWshz58LGU5pVkBmqO" Name="Entries" Kind="OutputPin" />
+                <Pin Id="HGClFcyImGULEqDxNABopH" Name="Type" Kind="OutputPin" />
+                <Pin Id="S8xjvpm1gxNMfqUqsuSOnR" Name="Is Readonly" Kind="OutputPin" />
+                <Pin Id="MBw6yT4uXbtQLESOLLDROS" Name="Is Locked" Kind="OutputPin" />
               </Node>
             </Patch>
-            <ControlPoint Id="S7Y3SrkAgcdLTwS6sqKHME" Bounds="672,719" Alignment="Bottom" />
-            <ControlPoint Id="LCOKCCjCB1MLgZKJ3hmyyJ" Bounds="670,456" Alignment="Top" />
-            <ControlPoint Id="CzUxH68d5rhNx8O6DVkveu" Bounds="637,719" Alignment="Bottom" />
-            <ControlPoint Id="Aq4J261GMmEO4BQKFBIupx" Bounds="644,456" Alignment="Top" />
-            <ControlPoint Id="SK6QZfXih1zPfVfBI7bpq1" Bounds="579,719" Alignment="Bottom" />
-            <ControlPoint Id="DJW6SftJlnhN8EVyTIWp1b" Bounds="608,456" Alignment="Top" />
-            <ControlPoint Id="N2I2KJCvUQUMMJaRyAFVc2" Bounds="538,719" Alignment="Bottom" />
-            <ControlPoint Id="LYoJMpbqfdAMovfXI1huSN" Bounds="571,456" Alignment="Top" />
-            <ControlPoint Id="Bp0NEMkW1kyNxGTS8tvEuh" Bounds="506,719" Alignment="Bottom" />
-            <ControlPoint Id="PHAmaz2u7FROYz3SdaY9cX" Bounds="541,456" Alignment="Top" />
-            <ControlPoint Id="GRYXRk4m9PnQBSjH32VURf" Bounds="466,719" Alignment="Bottom" />
-            <ControlPoint Id="QUvcnKtBjagL0tsLZLZvK5" Bounds="473,456" Alignment="Top" />
+            <ControlPoint Id="S7Y3SrkAgcdLTwS6sqKHME" Bounds="679,867" Alignment="Bottom" />
+            <ControlPoint Id="LCOKCCjCB1MLgZKJ3hmyyJ" Bounds="917,792" Alignment="Top" />
+            <ControlPoint Id="CzUxH68d5rhNx8O6DVkveu" Bounds="728,867" Alignment="Bottom" />
+            <ControlPoint Id="Aq4J261GMmEO4BQKFBIupx" Bounds="886,792" Alignment="Top" />
+            <ControlPoint Id="SK6QZfXih1zPfVfBI7bpq1" Bounds="703,867" Alignment="Bottom" />
+            <ControlPoint Id="DJW6SftJlnhN8EVyTIWp1b" Bounds="850,792" Alignment="Top" />
+            <ControlPoint Id="N2I2KJCvUQUMMJaRyAFVc2" Bounds="779,867" Alignment="Bottom" />
+            <ControlPoint Id="LYoJMpbqfdAMovfXI1huSN" Bounds="813,792" Alignment="Top" />
+            <ControlPoint Id="Bp0NEMkW1kyNxGTS8tvEuh" Bounds="753,867" Alignment="Bottom" />
+            <ControlPoint Id="PHAmaz2u7FROYz3SdaY9cX" Bounds="783,792" Alignment="Top" />
+            <ControlPoint Id="GRYXRk4m9PnQBSjH32VURf" Bounds="804,867" Alignment="Bottom" />
+            <ControlPoint Id="QUvcnKtBjagL0tsLZLZvK5" Bounds="715,792" Alignment="Top" />
+            <ControlPoint Id="TOQP0FcSYLqOyuE1iKQCxi" Bounds="830,867" Alignment="Bottom" />
+            <ControlPoint Id="NTcWo9sB2ePOjddtqS96pr" Bounds="835,792" Alignment="Top" />
+            <ControlPoint Id="DbEn0hUxGEeN4CqpA6Nwrm" Bounds="855,867" Alignment="Bottom" />
+            <ControlPoint Id="Bvgx6WQtf5oMWqOyGHMEs5" Bounds="869,792" Alignment="Top" />
+            <ControlPoint Id="AOjNAHZwduBOj6zBEM1CbO" Bounds="879,867" Alignment="Bottom" />
+            <ControlPoint Id="CcabNeBVBDlL08Kh472CLq" Bounds="912,792" Alignment="Top" />
           </Node>
-          <Node Bounds="397,414,65,19" Id="NB6iUCSc6WGOT7RpP3T8W5">
+          <Node Bounds="641,739,65,19" Id="NB6iUCSc6WGOT7RpP3T8W5">
             <p:NodeReference LastCategoryFullName="Primitive.Object" LastDependency="VL.CoreLib.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <FullNameCategoryReference ID="Primitive.Object" />
@@ -254,29 +137,123 @@
             <Pin Id="G5E9IsigjKwLNyTi8P6eKI" Name="Result" Kind="OutputPin" />
             <Pin Id="On6rJkiN4SbMXsfIng2NZz" Name="Not Assigned" Kind="OutputPin" />
           </Node>
-          <Pad Id="DfjrAHcfqA4OsWYoHGHWgu" Bounds="1011,96,211,15" ShowValueBox="true" isIOBox="true" Value="..\..\..\test3.json">
-            <p:TypeAnnotation LastCategoryFullName="IO" LastDependency="VL.CoreLib.vl">
-              <Choice Kind="ImmutableTypeFlag" Name="Path" />
-            </p:TypeAnnotation>
-          </Pad>
-          <Node Bounds="1009,130,55,19" Id="P27kiN2hlSlN62huZN6Urk">
-            <p:NodeReference LastCategoryFullName="System.Conversion" LastDependency="VL.CoreLib.vl">
-              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <FullNameCategoryReference ID="System.Conversion" />
-              <Choice Kind="OperationCallFlag" Name="ToString" />
-            </p:NodeReference>
-            <Pin Id="TCR5LayowPMP5DFqleAzwz" Name="Input" Kind="InputPin" />
-            <Pin Id="LyhCOyR7ux0N3k5GT2V8z8" Name="Result" Kind="OutputPin" />
-          </Node>
-          <Pad Id="DjqtDC34HKKLI6FA2qLoP1" Comment="" Bounds="1029,180,245,15" ShowValueBox="true" isIOBox="true" />
-          <Node Bounds="1009,208,118,19" Id="FySsAiAFNrKN8eM8E2AkEr">
+          <Node Bounds="654,215,55,19" Id="FySsAiAFNrKN8eM8E2AkEr">
             <p:NodeReference LastCategoryFullName="Devices.TheImagingSource" LastDependency="VL.Devices.TheImagingSource.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <Choice Kind="ProcessAppFlag" Name="FileConfigurationNode" />
+              <Choice Kind="ProcessAppFlag" Name="FromFile" />
             </p:NodeReference>
             <Pin Id="VgrSIKBdzbHQNagK2PO3eg" Name="File" Kind="InputPin" />
             <Pin Id="SE5jDvjE8ghMXeFyS0RkTR" Name="Result" Kind="OutputPin" />
           </Node>
+          <Node Bounds="654,477,70,19" Id="QCTvwYHmDCCNGFIakSRs6E">
+            <p:NodeReference LastCategoryFullName="Devices.TheImagingSource" LastDependency="VL.Devices.TheImagingSource.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="Category" Name="TheImagingSource" />
+              <Choice Kind="ProcessAppFlag" Name="SetProperty" />
+            </p:NodeReference>
+            <Pin Id="NeqTySaTfISO2h63JVlR1t" Name="Node Context" Kind="InputPin" IsHidden="true" />
+            <Pin Id="T02hIusEgWTP9nDzj9Sfqg" Name="Input" Kind="InputPin" />
+            <Pin Id="MDWZgp5usyCQJq09YvqLZL" Name="Key" Kind="InputPin" />
+            <Pin Id="GDMK4xT3B1aOHe17ABUVUF" Name="Value" Kind="InputPin" />
+            <Pin Id="MgTUifEO0EJOy2tgpOmSDw" Name="Result" Kind="OutputPin" />
+          </Node>
+          <Pad Id="Poytk36HunZMvcHmogWvi3" Comment="Key" Bounds="689,430,71,15" ShowValueBox="true" isIOBox="true" Value="Gamma">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="ImmutableTypeFlag" Name="String" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="IWD8ZKzfibCNdq9aZR6cIx" Comment="" Bounds="721,458,53,15" ShowValueBox="true" isIOBox="true" Value="1.25">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="ImmutableTypeFlag" Name="Float32" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Node Bounds="430,773,94,19" Id="IMBAUo13nIcNPpRLpBVYw7">
+            <p:NodeReference LastCategoryFullName="Devices.TheImagingSource" LastDependency="VL.Devices.TheImagingSource.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <FullNameCategoryReference ID="Devices.TheImagingSource" />
+              <Choice Kind="ProcessAppFlag" Name="SaveConfigToFile" />
+            </p:NodeReference>
+            <Pin Id="Cd625MLvwGVL2FdzSZ5fHz" Name="Node Context" Kind="InputPin" IsHidden="true" />
+            <Pin Id="NSkYgAVQ3v8OVw5ANBZTmr" Name="Video In" Kind="InputPin" />
+            <Pin Id="MzMG8MamM6jNTQWiYsQLUo" Name="Path" Kind="InputPin" />
+            <Pin Id="TmfnbLAOALoNCO3mZs5vqA" Name="Save" Kind="InputPin" />
+          </Node>
+          <Pad Id="JQYpONwzv9FMbxDq9stVBA" Comment="Path" Bounds="475,703,122,15" ShowValueBox="true" isIOBox="true" Value="camera_settings.txt">
+            <p:TypeAnnotation LastCategoryFullName="IO" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="Path" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="LuSwoTyRVC4NbsfQih13Te" Comment="Save" Bounds="521,733,49,39" ShowValueBox="true" isIOBox="true" Value="false">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="Nu2UBsfk9LbLn32UdvM2Ko" Comment="Path" Bounds="656,183,140,15" ShowValueBox="true" isIOBox="true" Value="camera_settings.txt">
+            <p:TypeAnnotation LastCategoryFullName="IO" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="Path" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="JuRja7zvM0kNKZ7SbFNgNe" Comment="Key" Bounds="688,306,103,15" ShowValueBox="true" isIOBox="true" Value="ExposureAuto">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="ImmutableTypeFlag" Name="String" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="EUv67ThQmPiQaWz3WoKcf2" Comment="" Bounds="718,341,63,15" ShowValueBox="true" isIOBox="true" Value="Continuous">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="ImmutableTypeFlag" Name="String" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="SvCX8s3LKhMM2dnhqbf4R1" Comment="" Bounds="808,340,63,15" ShowValueBox="true" isIOBox="true" Value="Off">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="ImmutableTypeFlag" Name="String" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="CYWiLSQbK7yObjo0sUncKT" Comment="Type" Bounds="830,998,82,15" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="Hhdn6hWtdlAO8cq7gMsmmZ" Comment="Is Readonly" Bounds="856,957,35,35" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="MWQFBMbrKzzMuDw5p7GmpT" Comment="Is Locked" Bounds="879,911,35,35" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="D06N6j2WAQRL2B0tu3hs4g" Comment="" Bounds="251,841,190,132" ShowValueBox="true" isIOBox="true" />
+          <Node Bounds="654,367,70,19" Id="ItnHOApkVe9LJtcXmC746c">
+            <p:NodeReference LastCategoryFullName="Devices.TheImagingSource" LastDependency="VL.Devices.TheImagingSource.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="Category" Name="TheImagingSource" />
+              <Choice Kind="ProcessAppFlag" Name="SetProperty" />
+            </p:NodeReference>
+            <Pin Id="Qfn9bPnwcOgLIQQ6rtkjKw" Name="Node Context" Kind="InputPin" IsHidden="true" />
+            <Pin Id="VTQem3IwhuHMSyVwHzRrQg" Name="Input" Kind="InputPin" />
+            <Pin Id="G2BkOYr8yRPLfcCYaxUGmQ" Name="Key" Kind="InputPin" />
+            <Pin Id="HBKXRUrHzPaMmVBcNhyIhm" Name="Value" Kind="InputPin" />
+            <Pin Id="HUJhT8e0NhSLK0Z6hl0hZ5" Name="Result" Kind="OutputPin" />
+          </Node>
+          <Pad Id="LoJlIM1x0fuQM8BYOBlsJN" Bounds="738,213,179,19" ShowValueBox="true" isIOBox="true" Value="Load configuration from file.">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="NhOpeOlleOALIJrxMWgcOs" Bounds="815,371,141,19" ShowValueBox="true" isIOBox="true" Value="Set property by name.">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="MVqfdRwzA65PbdXpdBJmbx" Bounds="446,677,162,19" ShowValueBox="true" isIOBox="true" Value="Seve configuration to file.">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
         </Canvas>
         <Patch Id="FHRHmXJvODbMCp8DzoqUuv" Name="Create" />
         <Patch Id="H1Kx9bCRYcoLD0G7PGQFn1" Name="Update" />
@@ -288,52 +265,54 @@
         <Link Id="L2FEQSalcK5MJR0KTq7aPe" Ids="FmuuC52SChVPgJOd0GRRdu,NxFX0Y6GLl2LXtJ08VlCfQ" />
         <Link Id="I8qyQiyb7JjMOAigtCYafa" Ids="FOzp6o88apUOuTGlf2iOvk,CJoLrs091J1PUN101DlxWz" />
         <Link Id="VT1hwG87eRLOGT0v4CCpHm" Ids="QV19TE0fCuSLz7FPl1t120,TB4kibufuGQOSw0xiF8Vjy" />
-        <Link Id="VaNDrV55HgLNOWVdy8a0Rr" Ids="Bn72WRRmJs5NZvOl7VRLDf,O0IuuuVMy9LNfcspcnMIUa" />
         <Link Id="OeWymYhTecTQaBFYalDbRQ" Ids="LvPOD9emrb9QcU3d7Ip627,HEZv0rNfCBIMlSGbm5HwhL" />
-        <Link Id="OrvZtHpluueL5SrLRJTFBS" Ids="EKF4oRuz7h8N67SVQve5Rg,UayR9EnaWImQPynyfBTKsr" />
-        <Link Id="KtIQdjQlJJ9Mgua5cCaYCW" Ids="KEP1aKFhaYNMkntTrvJ9dT,C5bi6TDvEzJOQBpkNwUWeo" />
-        <Link Id="GlXNqpiPr6FN8gMztwRWy6" Ids="U8YMlczYF5uLBSPm6WsRPt,KUB6D7LjUIJPxu0pT8qg4c" />
-        <Link Id="PcY1NWnswrTLXeJzDjcpJ0" Ids="CBBm5eyuvJuOmZa4F7tfjt,Qmcx2FrtptPPOSXG4AOXpM" />
-        <Link Id="QZkYrGDzJ32MB2J289QjCe" Ids="K2it8aUlv2gQbpI0eLk3sz,JuP1CF6HeMcNZeFm0vTd0x" />
         <Link Id="VkI3ebHMv1ELZuVukB8EGn" Ids="MFWybYLFhSjMtaMhy9Ha37,FAmW1FNiVvxN7E3h3MfLbP" />
-        <Link Id="UESBYELVdTtPKcRjKcHIjE" Ids="BaPp6umgoY8LQlvURPFH9b,Le6BWu8qMzNN5PlNuZcItK" />
-        <Link Id="RCS65J6QKHpNvqtrTAuP0v" Ids="SFJZpFH7KBtOcuMNctASaM,HNx0Nc9IJwxLafoeEHrMUd" />
-        <Link Id="Ptpy38Q0klfNDh4rZFlPBS" Ids="AoAaPu0kIhMLERAMMmxx8v,Mes4RCnFZPBMIcwFUrIFtZ" />
-        <Link Id="JL5GuQ6gTL0PYREDKB39eZ" Ids="Mes4RCnFZPBMIcwFUrIFtZ,HFRGjSLF9JYLgZaKXcEOvb" />
-        <Link Id="CPcOCTD1sxKM7jQjcB8rlY" Ids="TSOuo0z2Z5QPvXIDMZ2ZUi,US1MsEAFWfcQOqrdx2YaqZ" />
-        <Link Id="M8kaZdVtqtqLpBXda4wDmJ" Ids="Qmcx2FrtptPPOSXG4AOXpM,EF4Snd6kldSMZkH5KHh5iV" />
-        <Link Id="CkTedapui0HLsd9xdIFOnO" Ids="JbIhMO7bhhtMR0kYMciHvC,KiGlVmjhPL6MHXfHift0zE" />
-        <Link Id="GNEVdHjcE1xNtN18b6fynj" Ids="Mw8AQuBZn6QMy3kbmPjJCX,JOhqpotVdadL4qYnbUhjgg" />
-        <Link Id="CycIbOMBbpwPAZN5oBvKZ0" Ids="VYLI1ScI8YBMzcyR4WQSSV,Au8q3Z8CxqJO6P9viijiho" />
-        <Link Id="KR5oLE3u26dLVLloJBbJy1" Ids="Sa140iIaJC1QYLVEVeeNa3,N3vppj3KI0PPwrqzkT4wgx" />
-        <Link Id="BQ2l4sKbgpLMTcTEgjg4Xv" Ids="Kluhn26DR1oLUqCC4EVfLu,E8iI5mPZfZaNDbIMK4M3FL" />
+        <Link Id="CPcOCTD1sxKM7jQjcB8rlY" Ids="TSOuo0z2Z5QPvXIDMZ2ZUi,MN5LOjjIGK2QFXYv1q1oGo" />
         <Link Id="S70kqkhXbe9NhzJ0pzVOsu" Ids="TSOuo0z2Z5QPvXIDMZ2ZUi,K4j6J5jM5nFQbdXl8xspnp" />
         <Link Id="QrfWfBUn1ogMHY4xjhHJuo" Ids="G5E9IsigjKwLNyTi8P6eKI,LpSszLRTLZ0NNnbX47rkBz" />
         <Link Id="MfKI7ZObZRkOujJL79Z3XD" Ids="LCOKCCjCB1MLgZKJ3hmyyJ,S7Y3SrkAgcdLTwS6sqKHME" IsFeedback="true" />
-        <Link Id="KBzKTQBygzqNdgqnplKr2x" Ids="PAuj1g2l57cNBCWMlkHYnC,S7Y3SrkAgcdLTwS6sqKHME" />
         <Link Id="EJ7BV78YKwlMJ5AeLxfwdf" Ids="S7Y3SrkAgcdLTwS6sqKHME,TOrW3bB8zMJQBZFBFmrBrt" />
         <Link Id="HxI5z6CT2MANoFr3u2gVbJ" Ids="Aq4J261GMmEO4BQKFBIupx,CzUxH68d5rhNx8O6DVkveu" IsFeedback="true" />
-        <Link Id="CWTE66yIe8lNUJyOxxOYL2" Ids="FZvLkzJUkTPLSzBoZ2ugyy,CzUxH68d5rhNx8O6DVkveu" />
         <Link Id="FujxkWQZYo7MXUJ1sk3vUr" Ids="CzUxH68d5rhNx8O6DVkveu,Ejc4CqRS8nrLWTRUiH0Kaf" />
         <Link Id="P78qqI0mlM1NvKGpnKppwM" Ids="DJW6SftJlnhN8EVyTIWp1b,SK6QZfXih1zPfVfBI7bpq1" IsFeedback="true" />
-        <Link Id="QC9gr3rShHRM9jV8f9wjmo" Ids="FSy2NtyC94aNnveFtGPp8P,SK6QZfXih1zPfVfBI7bpq1" />
         <Link Id="IDGCPDleWhxPKLq3VKkHdD" Ids="SK6QZfXih1zPfVfBI7bpq1,SFP6kmjbfuTOtPpAjxYTw7" />
         <Link Id="TP8IN28UfVWLPLxXliX9yy" Ids="LYoJMpbqfdAMovfXI1huSN,N2I2KJCvUQUMMJaRyAFVc2" IsFeedback="true" />
-        <Link Id="Csr1TP8JaQtPJHxYUxyA1e" Ids="UzQ77UoQuT4M6Z2dfuUMYZ,N2I2KJCvUQUMMJaRyAFVc2" />
         <Link Id="JjgTUkAH7rjNhOahEqpaIu" Ids="N2I2KJCvUQUMMJaRyAFVc2,VTazQZwBQf1OS1QYNCVjak" />
         <Link Id="UxxxhxoIRuBQE1fkIHKkub" Ids="PHAmaz2u7FROYz3SdaY9cX,Bp0NEMkW1kyNxGTS8tvEuh" IsFeedback="true" />
         <Link Id="OI5duqIGERIOR9JFcnhFcZ" Ids="Bp0NEMkW1kyNxGTS8tvEuh,Br7BdNtpDGiMWkuJxnkdMr" />
-        <Link Id="SIUU57kgaHOOLPm8xMR23E" Ids="HTvyzoNVbUaPwHBHU3eBo4,Bp0NEMkW1kyNxGTS8tvEuh" />
         <Link Id="SncikLGhWpFNuoQS3yfd8C" Ids="QUvcnKtBjagL0tsLZLZvK5,GRYXRk4m9PnQBSjH32VURf" IsFeedback="true" />
-        <Link Id="PzoXIGqXGKYPeP4b5sZOYm" Ids="Dtd0vtVJSLoQBhALhpH5EX,GRYXRk4m9PnQBSjH32VURf" />
         <Link Id="Pa357uIpeIgNnOv79IR3rv" Ids="GRYXRk4m9PnQBSjH32VURf,HkfwgGuXeN6MaaAE6QLAH2" />
-        <Link Id="EELnph1PQXDOtbTrwzXLwg" Ids="DfjrAHcfqA4OsWYoHGHWgu,TCR5LayowPMP5DFqleAzwz" />
-        <Link Id="UHzpitJ34AyQQydx1bu1Di" Ids="LyhCOyR7ux0N3k5GT2V8z8,DjqtDC34HKKLI6FA2qLoP1" />
-        <Link Id="PpIJmJEnQVJOQYoFQVWV5c" Ids="LyhCOyR7ux0N3k5GT2V8z8,VgrSIKBdzbHQNagK2PO3eg" />
-        <Link Id="FZLhvTNkl6aLUjIU85N25s" Ids="DfBRpc8iBiTMIiuJq0lWxm,PYq7Xoh8ITkMsfkOwJj7S0" />
+        <Link Id="MonnGRAJlhbQAVnBiJaj3v" Ids="TLN10Gfv6lyPXvrWb4oYQa,HNx0Nc9IJwxLafoeEHrMUd" />
+        <Link Id="Q47Hz8TVuJXM3lHwRxwe1C" Ids="Poytk36HunZMvcHmogWvi3,MDWZgp5usyCQJq09YvqLZL" />
+        <Link Id="Idr3Abo7TZqMCMPGuV3d4K" Ids="IWD8ZKzfibCNdq9aZR6cIx,GDMK4xT3B1aOHe17ABUVUF" />
+        <Link Id="IuKYQo2PrfuLHHho1PnL4r" Ids="QV19TE0fCuSLz7FPl1t120,NSkYgAVQ3v8OVw5ANBZTmr" />
+        <Link Id="DidlnGjYt4UPvH1qnwsJQf" Ids="JQYpONwzv9FMbxDq9stVBA,MzMG8MamM6jNTQWiYsQLUo" />
+        <Link Id="GMzQizFhi28NPtJ8xJrPz2" Ids="LuSwoTyRVC4NbsfQih13Te,TmfnbLAOALoNCO3mZs5vqA" />
+        <Link Id="O5AMI3KpL4OOw8WAI90jxI" Ids="RDq1Tk3OTh2MkZ4WGFRM8P,S7Y3SrkAgcdLTwS6sqKHME" />
+        <Link Id="EecTu5Iu7rGQSAwFN8rBGe" Ids="RXM0XX8lKK9Mf0E1tsWJxf,SK6QZfXih1zPfVfBI7bpq1" />
+        <Link Id="BH1C7ReHXbhNCNHTVPSK1B" Ids="OinOcbPPFhlPQ4SofJ1X85,CzUxH68d5rhNx8O6DVkveu" />
+        <Link Id="NiUVWfONOWhN77JoiodM66" Ids="Kf2uoTURHLuN2ArMMWYkBu,Bp0NEMkW1kyNxGTS8tvEuh" />
+        <Link Id="Dof8NDllRQaMobwA0g2bvj" Ids="ML2PL4GljmWN8NCPGuMg1a,N2I2KJCvUQUMMJaRyAFVc2" />
+        <Link Id="DTNm0ryyx7FOmUCNLFW36A" Ids="N7h8qWshz58LGU5pVkBmqO,GRYXRk4m9PnQBSjH32VURf" />
+        <Link Id="D04upwfntr4L5yJTAyEGYt" Ids="NTcWo9sB2ePOjddtqS96pr,TOQP0FcSYLqOyuE1iKQCxi" IsFeedback="true" />
+        <Link Id="Rtlkb1FrOg3Lpq0cNGMdjs" Ids="HGClFcyImGULEqDxNABopH,TOQP0FcSYLqOyuE1iKQCxi" />
+        <Link Id="RTFBkYFJ902LOT8AE6q0sJ" Ids="TOQP0FcSYLqOyuE1iKQCxi,CYWiLSQbK7yObjo0sUncKT" />
+        <Link Id="RZ5DPIM0XvnNxz06zmSDS1" Ids="Bvgx6WQtf5oMWqOyGHMEs5,DbEn0hUxGEeN4CqpA6Nwrm" IsFeedback="true" />
+        <Link Id="UALYeGiw411MU96CnRMpFc" Ids="S8xjvpm1gxNMfqUqsuSOnR,DbEn0hUxGEeN4CqpA6Nwrm" />
+        <Link Id="AoykO4Dl3w8P3BfMWrKmO0" Ids="DbEn0hUxGEeN4CqpA6Nwrm,Hhdn6hWtdlAO8cq7gMsmmZ" />
+        <Link Id="CGAmhsj3OkgQHDEV3rF8xu" Ids="CcabNeBVBDlL08Kh472CLq,AOjNAHZwduBOj6zBEM1CbO" IsFeedback="true" />
+        <Link Id="Ees9g62jsQ1NJrVSIsEfyp" Ids="MBw6yT4uXbtQLESOLLDROS,AOjNAHZwduBOj6zBEM1CbO" />
+        <Link Id="GoVYdiEDhTHPiQAcDtUCst" Ids="AOjNAHZwduBOj6zBEM1CbO,MWQFBMbrKzzMuDw5p7GmpT" />
+        <Link Id="AlwtNzoFVuRPDOtULdfP09" Ids="Bn72WRRmJs5NZvOl7VRLDf,D06N6j2WAQRL2B0tu3hs4g" />
+        <Link Id="JnfXWvhTo2ANDlVKH6qAlB" Ids="JuRja7zvM0kNKZ7SbFNgNe,G2BkOYr8yRPLfcCYaxUGmQ" />
+        <Link Id="TfatkvXJvkFMQ31mRVxqov" Ids="SE5jDvjE8ghMXeFyS0RkTR,VTQem3IwhuHMSyVwHzRrQg" />
+        <Link Id="L4roW6oz2qiLQiPjGwU50Z" Ids="HUJhT8e0NhSLK0Z6hl0hZ5,T02hIusEgWTP9nDzj9Sfqg" />
+        <Link Id="QCrk3WIcnhPMH8YhznhL4K" Ids="EUv67ThQmPiQaWz3WoKcf2,HBKXRUrHzPaMmVBcNhyIhm" />
+        <Link Id="QObacm38pP0O4L3V4BUckE" Ids="Nu2UBsfk9LbLn32UdvM2Ko,VgrSIKBdzbHQNagK2PO3eg" />
+        <Link Id="AWNjAX3hpruMe9T4Hqr4OT" Ids="MgTUifEO0EJOy2tgpOmSDw,PYq7Xoh8ITkMsfkOwJj7S0" />
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="KsQYvgw5NEpQPqf55BOVu1" Location="VL.Stride" Version="2024.6.3-0015-gd6867805c4" />
+  <NugetDependency Id="KsQYvgw5NEpQPqf55BOVu1" Location="VL.Stride" Version="2024.6.3-0028-gef26394f82" />
   <NugetDependency Id="D9nA8hhNHO8PbKW3S6co1I" Location="VL.Devices.TheImagingSource" Version="0.0.0" />
 </Document>

@@ -1,15 +1,16 @@
 ﻿using ic4;
+using Path = VL.Lib.IO.Path;
 using System.Collections.Immutable;
 
 namespace VL.Devices.TheImagingSource
 {
-    [ProcessNode]
+    [ProcessNode(Name = "FromFile")]
     public class FileConfigurationNode
     {
         IConfiguration? configuration;
-        string? file;
+        Path? file;
 
-        public IConfiguration Update(string file)
+        public IConfiguration Update(Path file)
         {
             if (file != this.file)
             {
@@ -23,15 +24,15 @@ namespace VL.Devices.TheImagingSource
 
     class FileConfiguration : IConfiguration
     {
-        public string File { get; }
-        public FileConfiguration(string file)
+        public Path File { get; }
+        public FileConfiguration(Path file)
         {
             File = file;
         }
         
         public void Configure(PropertyMap propertyMap)
         {
-            if(Path.Exists(File))propertyMap.DeSerialize(File);
+            if(File.Exists) propertyMap.DeSerialize(File.ToString());
         }
     }
 }

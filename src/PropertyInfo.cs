@@ -13,7 +13,7 @@ namespace VL.Devices.TheImagingSource
     /// </summary>
     /// <param name="Name"></param>
     /// <param name="DefaultValue"></param>
-    public record PropertyInfo(string Name, object CurrentValue, string Description, object Minimum, object Maximum, Spread<string> Entries)
+    public record PropertyInfo(string Name, object CurrentValue, string Description, object Minimum, object Maximum, Spread<string> Entries, string Type, bool IsReadonly, bool IsLocked)
     {
     }
 }
