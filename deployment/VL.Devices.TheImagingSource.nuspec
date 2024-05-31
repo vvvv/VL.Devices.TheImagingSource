@@ -13,7 +13,7 @@
     <license type="expression">LGPL-3.0-only</license>
     <dependencies>
       <group targetFramework="net6.0">
-        <dependency id="ic4dotnet" version="1.0.0.2413" />
+        <dependency id="ic4dotnet" version="1.0.2.2420" />
       </group>
     </dependencies>
     <icon>icon\nugeticon.png</icon>

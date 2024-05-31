@@ -4,19 +4,21 @@ using System.Collections.Immutable;
 
 namespace VL.Devices.TheImagingSource
 {
-    [ProcessNode(Name = "FromFile")]
+    [ProcessNode(Name = "ConfigReader")]
     public class FileConfigurationNode
     {
         IConfiguration? configuration;
         Path? file;
 
-        public IConfiguration Update(Path file)
+        [return: Pin(Name = "Output")]
+        public IConfiguration Update(
+            Path FilePath,
+            bool Read)
         {
-            if (file != this.file)
+            if (Read)
             {
-                this.file = file;
-                configuration = new FileConfiguration(file);
-
+                this.file = FilePath;
+                configuration = new FileConfiguration(FilePath);
             }
             return configuration!;
         }

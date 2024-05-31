@@ -1,17 +1,11 @@
 ﻿using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VL.Lib.IO;
 using Path = VL.Lib.IO.Path;
 
 namespace VL.Devices.TheImagingSource
 {
-    [ProcessNode]
+    [ProcessNode(Name = "ConfigWriter")]
     public class SaveConfigToFile : IDisposable
     {
         private readonly ILogger logger;
@@ -22,19 +16,19 @@ namespace VL.Devices.TheImagingSource
             logger = nodeContext.GetLogger();
         }
 
-        public void Update(VideoIn? videoIn, Path path, bool save)
+        public void Update(VideoIn? input, Path filePath, bool write)
         {
-            if (videoIn is null) 
+            if (input is null) 
                 return;
 
-            if (save)
+            if (write)
             {
-                serialDisposable.Disposable = videoIn.AcquisitionStarted.Take(1)
+                serialDisposable.Disposable = input.AcquisitionStarted.Take(1)
                     .Subscribe(a =>
                     {
                         try
                         {
-                            a.PropertyMap.Serialize(path.ToString());
+                            a.PropertyMap.Serialize(filePath.ToString());
                         }
                         catch (Exception e)
                         {

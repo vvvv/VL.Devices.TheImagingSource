@@ -36,22 +36,20 @@ namespace VL.Devices.TheImagingSource
         public VideoIn Update(
             ImagingSourceDevice? device, 
             [DefaultValue("640, 480")] Int2 resolution,
-            [DefaultValue("30")] int fps,
+            [DefaultValue("30")] int FPS,
             IConfiguration configuration,
-            out Spread<PropertyInfo> PropertyInfos,
             out string Info)
         {
             // By comparing the device info we can be sure that on re-connect of the device we see the change
-            if (device?.Tag != _device || resolution != _resolution || fps != _fps || configuration != _configuration)
+            if (device?.Tag != _device || resolution != _resolution || FPS != _fps || configuration != _configuration)
             {
                 _device = device?.Tag as DeviceInfo;
                 _resolution = resolution;
-                _fps = fps;
+                _fps = FPS;
                 _configuration = configuration;
                 _changedTicket++;
             }
 
-            PropertyInfos = this.PropertyInfos;
             Info = this.Info;
             
             return this;
