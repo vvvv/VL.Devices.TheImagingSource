@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" xmlns:r="reflection" Id="O7uicvpTue7QOkn9pvT6h0" LanguageVersion="2024.6.5-0016-gb5aa8f6e58" Version="0.128">
-  <NugetDependency Id="MtSbXB0fXjONs00wQwc2B1" Location="VL.CoreLib" Version="2024.6.5-0016-gb5aa8f6e58" />
+<Document xmlns:p="property" xmlns:r="reflection" Id="O7uicvpTue7QOkn9pvT6h0" LanguageVersion="2024.6.4" Version="0.128">
+  <NugetDependency Id="MtSbXB0fXjONs00wQwc2B1" Location="VL.CoreLib" Version="2024.6.4" />
   <Patch Id="AYmy0M1i0HKOGdLzwQw0md">
     <Canvas Id="MgtF2r3NxUCLslHtjPAC3I" DefaultCategory="Main" BordersChecked="false" CanvasType="FullCategory" />
     <!--
@@ -20,6 +20,7 @@
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="VideoIn" />
             </p:NodeReference>
+            <p:HelpFocus p:Assembly="VL.Lang" p:Type="VL.Model.HelpPriority">High</p:HelpFocus>
             <Pin Id="GhNmDJAdAbLNUYLDDU82ey" Name="Node Context" Kind="InputPin" IsHidden="true" />
             <Pin Id="CJoLrs091J1PUN101DlxWz" Name="Device" Kind="InputPin" />
             <Pin Id="M0lApEPpMXcM21Xeume95p" Name="Resolution" Kind="InputPin" />
@@ -78,6 +79,7 @@
                   <FullNameCategoryReference ID="Devices.TheImagingSource.PropertyInfo" />
                   <Choice Kind="OperationCallFlag" Name="Split" />
                 </p:NodeReference>
+                <p:HelpFocus p:Assembly="VL.Lang" p:Type="VL.Model.HelpPriority">High</p:HelpFocus>
                 <Pin Id="MN5LOjjIGK2QFXYv1q1oGo" Name="Input" Kind="StateInputPin" />
                 <Pin Id="Ngkt68AT8SNP3EnAfsjS0K" Name="Output" Kind="StateOutputPin" />
                 <Pin Id="RDq1Tk3OTh2MkZ4WGFRM8P" Name="Name" Kind="OutputPin" />
@@ -125,6 +127,7 @@
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="ConfigReader" />
             </p:NodeReference>
+            <p:HelpFocus p:Assembly="VL.Lang" p:Type="VL.Model.HelpPriority">High</p:HelpFocus>
             <Pin Id="TyRVZTLGtPNQWGTeYG7sJm" Name="File Path" Kind="InputPin" />
             <Pin Id="RpLLrpRJZpHOnKKv2cik9h" Name="Output" Kind="OutputPin" />
             <Pin Id="CsroB5BJhosNloM9GlfVdy" Name="Read" Kind="InputPin" />
@@ -157,6 +160,7 @@
               <FullNameCategoryReference ID="Devices.TheImagingSource" />
               <Choice Kind="ProcessAppFlag" Name="ConfigWriter" />
             </p:NodeReference>
+            <p:HelpFocus p:Assembly="VL.Lang" p:Type="VL.Model.HelpPriority">High</p:HelpFocus>
             <Pin Id="Cd625MLvwGVL2FdzSZ5fHz" Name="Node Context" Kind="InputPin" IsHidden="true" />
             <Pin Id="TdVse1tMkOCQOlz8rXBDgd" Name="Input" Kind="InputPin" />
             <Pin Id="IFMaT7kW83bNzEY8LJYrNv" Name="File Path" Kind="InputPin" />
@@ -187,6 +191,7 @@
               <CategoryReference Kind="Category" Name="TheImagingSource" />
               <Choice Kind="ProcessAppFlag" Name="ConfigProperty" />
             </p:NodeReference>
+            <p:HelpFocus p:Assembly="VL.Lang" p:Type="VL.Model.HelpPriority">High</p:HelpFocus>
             <Pin Id="Qfn9bPnwcOgLIQQ6rtkjKw" Name="Node Context" Kind="InputPin" IsHidden="true" />
             <Pin Id="VTQem3IwhuHMSyVwHzRrQg" Name="Input" Kind="InputPin" />
             <Pin Id="HE8ayI3TpNiOAfde6WB0vO" Name="Name" Kind="InputPin" />
@@ -257,6 +262,7 @@
               <CategoryReference Kind="Category" Name="TheImagingSource" />
               <Choice Kind="ProcessAppFlag" Name="AvailableProperties" />
             </p:NodeReference>
+            <p:HelpFocus p:Assembly="VL.Lang" p:Type="VL.Model.HelpPriority">High</p:HelpFocus>
             <Pin Id="DYDJkosSkEVMGPser1O8pT" Name="Node Context" Kind="InputPin" IsHidden="true" />
             <Pin Id="EHqloVcJqJWPI04qtmHRHy" Name="Input" Kind="InputPin" />
             <Pin Id="RkfliTcj06hO09HjBIJegf" Name="Properties" Kind="OutputPin" />
@@ -359,6 +365,7 @@
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="GetProperty" />
             </p:NodeReference>
+            <p:HelpFocus p:Assembly="VL.Lang" p:Type="VL.Model.HelpPriority">High</p:HelpFocus>
             <Pin Id="FrUWafItJrIQA6aqPKRgrB" Name="Node Context" Kind="InputPin" IsHidden="true" />
             <Pin Id="PaiOC0mwicfNxtg6qE4l0J" Name="Input" Kind="InputPin" />
             <Pin Id="McUpJa3ih5dLRLLcNAM8TI" Name="Name" Kind="InputPin" />
@@ -444,6 +451,6 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="KsQYvgw5NEpQPqf55BOVu1" Location="VL.Stride" Version="2024.6.5-0016-gb5aa8f6e58" />
+  <NugetDependency Id="KsQYvgw5NEpQPqf55BOVu1" Location="VL.Stride" Version="2024.6.4" />
   <NugetDependency Id="D9nA8hhNHO8PbKW3S6co1I" Location="VL.Devices.TheImagingSource" Version="0.0.0" />
 </Document>
