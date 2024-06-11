@@ -9,7 +9,7 @@
     <projectUrl>https://github.com/vvvv/VL.Devices.TheImagingSource</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Support for using industrial cameras by The Imaging Source with vvvv</description>
-    <tags>VL, ic4, camera, capture, video</tags>
+    <tags>VL, ic4, tis, camera, capture, video</tags>
     <license type="expression">LGPL-3.0-only</license>
     <dependencies>
       <group targetFramework="net6.0">
