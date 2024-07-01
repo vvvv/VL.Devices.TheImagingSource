@@ -1,6 +1,7 @@
 ﻿using ic4;
 using Path = VL.Lib.IO.Path;
 using System.Collections.Immutable;
+using VL.Devices.TheImagingSource.Advanced;
 
 namespace VL.Devices.TheImagingSource
 {

@@ -5,6 +5,7 @@ using VL.Lib.Basics.Resources;
 using VL.Lib.Basics.Video;
 using LogLevel = Microsoft.Extensions.Logging.LogLevel;
 using System.Text;
+using VL.Devices.TheImagingSource.Advanced;
 
 namespace VL.Devices.TheImagingSource
 {
@@ -199,7 +200,7 @@ namespace VL.Devices.TheImagingSource
 
         public unsafe IResourceProvider<VideoFrame>? GrabVideoFrame()
         {
-            var image = _sink.SnapSingle(TimeSpan.FromSeconds(1));
+            var image = _sink.SnapSingle(TimeSpan.FromSeconds(1.5)); //should be long enough for the lowest frame rate
 
             var width = _resolution.X;
             var height = _resolution.Y;

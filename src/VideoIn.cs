@@ -21,6 +21,7 @@ namespace VL.Devices.TheImagingSource
         private Int2 _resolution;
         private int _fps;
         private IConfiguration? _configuration;
+        private bool _enabled;
 
 
         internal string Info { get; set; } = "";
@@ -33,25 +34,29 @@ namespace VL.Devices.TheImagingSource
         }
 
         [return: Pin(Name = "Output")]
-        public VideoIn Update(
+        public VideoIn? Update(
             ImagingSourceDevice? device, 
             [DefaultValue("640, 480")] Int2 resolution,
             [DefaultValue("30")] int FPS,
             IConfiguration configuration,
+            [DefaultValue("true")] bool enabled,
             out string Info)
         {
             // By comparing the device info we can be sure that on re-connect of the device we see the change
-            if (device?.Tag != _device || resolution != _resolution || FPS != _fps || configuration != _configuration)
+            if (device?.Tag != _device || resolution != _resolution || FPS != _fps || configuration != _configuration || enabled != _enabled)
             {
                 _device = device?.Tag as DeviceInfo;
                 _resolution = resolution;
                 _fps = FPS;
                 _configuration = configuration;
+                _enabled = enabled;
                 _changedTicket++;
             }
 
             Info = this.Info;
-            
+
+            if (!enabled) return null;
+
             return this;
         }
 

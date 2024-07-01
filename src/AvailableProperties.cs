@@ -24,7 +24,7 @@ namespace VL.Devices.TheImagingSource
                 properties = Spread<string>.Empty;
                 return;
             }
-            properties = input.PropertyInfos.Select(x => x.Name).ToSpread();
+            properties = input.PropertyInfos.Select(x => x.Name).OrderBy(x => x).ToSpread();
             return;            
         }
 

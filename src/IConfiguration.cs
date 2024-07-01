@@ -1,6 +1,6 @@
 ﻿using ic4;
 
-namespace VL.Devices.TheImagingSource
+namespace VL.Devices.TheImagingSource.Advanced
 {
     public interface IConfiguration
     {

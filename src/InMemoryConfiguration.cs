@@ -1,6 +1,7 @@
 ﻿using ic4;
 using Microsoft.Extensions.Logging;
 using System.Collections.Immutable;
+using VL.Devices.TheImagingSource.Advanced;
 
 namespace VL.Devices.TheImagingSource
 {

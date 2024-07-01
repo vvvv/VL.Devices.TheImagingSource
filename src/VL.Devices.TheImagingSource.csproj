@@ -15,7 +15,7 @@
 
   <ItemGroup>
     <PackageReference Include="ic4dotnet" Version="1.0.2.2420" ExcludeAssets="build" />
-    <PackageReference Include="VL.Core" Version="2024.6.4" />
+    <PackageReference Include="VL.Core" Version="2024.6.5" />
   </ItemGroup>
 
   <ItemGroup>

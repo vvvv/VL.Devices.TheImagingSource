@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
-using Path = VL.Lib.IO.Path;
 
 namespace VL.Devices.TheImagingSource
 {
