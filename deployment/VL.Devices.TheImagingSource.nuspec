@@ -3,9 +3,10 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
   <metadata>
     <id>VL.Devices.TheImagingSource</id>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <title>VL.Devices.TheImagingSource</title>
     <authors>vvvv</authors>
+    <repository type="git" url="https://github.com/vvvv/VL.Devices.TheImagingSource.git" />
     <projectUrl>https://github.com/vvvv/VL.Devices.TheImagingSource</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Support for using industrial cameras by The Imaging Source with vvvv</description>
@@ -13,7 +14,7 @@
     <license type="expression">LGPL-3.0-only</license>
     <dependencies>
       <group targetFramework="net6.0">
-        <dependency id="ic4dotnet" version="1.0.2.2420" />
+        <dependency id="ic4dotnet" version="1.2.0.2954" />
       </group>
     </dependencies>
     <icon>icon\nugeticon.png</icon>
